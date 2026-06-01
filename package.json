@@ -1,0 +1,30 @@
+{
+  "name": "analysis-kefalonia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static React (Next.js) rebuild of analysiskefalonia.com — ANALYSIS pest control & chemical analysis, Kefalonia.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "node scripts/optimize-images.mjs && next build && node scripts/finalize.mjs",
+    "build:next": "next build",
+    "images": "node scripts/optimize-images.mjs",
+    "start": "next start",
+    "serve": "npx --yes serve out",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^15.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
+    "sharp": "^0.33.5",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3"
+  }
+}
