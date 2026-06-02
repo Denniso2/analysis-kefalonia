@@ -21,22 +21,45 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
   const pathname = usePathname() || `/${locale}/`;
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  // Scroll-linked 0→1 used to gradually reveal the home wordmark as you scroll the hero.
+  const [scrollReveal, setScrollReveal] = useState(0);
 
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
-  // Shrink + strengthen the header once the page is scrolled past the hero edge.
+  // Shrink + strengthen the header once scrolled, and track scroll progress so the home
+  // wordmark can fade in gradually (rAF-coalesced to one update per frame).
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    let raf = 0;
+    const onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        const y = window.scrollY;
+        setScrolled(y > 24);
+        // Fade in across roughly the first 45% of a viewport of scrolling.
+        const distance = Math.max(240, window.innerHeight * 0.45);
+        setScrollReveal(Math.min(1, y / distance));
+      });
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
   }, []);
 
   const norm = (p: string) => (p.endsWith('/') ? p : `${p}/`);
   const here = norm(pathname);
   const isActive = (href: string) => here === norm(href);
+
+  // On the landing page the hero already shows the "ANALYSIS" wordmark, so the header
+  // wordmark fades in gradually with scroll (the drop logomark stays) — avoids showing
+  // the name twice over the hero. Other pages always show it.
+  const isHome = isActive(pagePath(locale, 'home'));
+  const wordmarkOpacity = isHome ? scrollReveal : 1;
 
   // Twin of the current page in another locale (keeps you on the same page).
   const twinFor = (loc: Locale) =>
@@ -77,7 +100,9 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
             className={`w-auto transition-all duration-300 ${scrolled ? 'h-9' : 'h-12 md:h-14'}`}
           />
           <span
-            className={`font-display font-semibold tracking-wide transition-all duration-300 ${
+            aria-hidden={wordmarkOpacity < 0.05}
+            style={{ opacity: wordmarkOpacity }}
+            className={`font-display font-semibold tracking-wide transition-[font-size] duration-300 ${
               scrolled ? 'text-[22px] md:text-[24px]' : 'text-[26px] md:text-[31px]'
             }`}
           >

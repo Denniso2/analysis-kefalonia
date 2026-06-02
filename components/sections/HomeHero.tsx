@@ -1,13 +1,18 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import Reveal from '@/components/Reveal';
 import { ArrowRightIcon, ChevronDownIcon } from '@/components/Icons';
 import { type Locale, type Dictionary, pagePath } from '@/lib/i18n';
 
 export default function HomeHero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
+  // The hero title is the brand name; the source heroTitle is really a list of services,
+  // so split it on the " - " / " & " separators and show it as a middot-joined line under
+  // the brand. Splitting first also avoids the Greek title wrapping mid-term / dangling
+  // a stray hyphen at a line end.
+  const services = dict.home.heroTitle.split(/\s+[-–—&]\s+/);
+
   return (
-    <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-navy px-5 pb-24 pt-32 text-center text-white md:pt-28">
-      {/* Depth: vertical navy gradient + soft radial glow behind the logo. */}
+    <section className="relative flex min-h-[56svh] items-center justify-center overflow-hidden bg-navy px-5 pb-20 pt-32 text-center text-white md:pt-28">
+      {/* Depth: vertical navy gradient + soft radial glow behind the headline. */}
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-gradient-to-b from-navydeep via-navy to-navydeep"
@@ -19,24 +24,19 @@ export default function HomeHero({ locale, dict }: { locale: Locale; dict: Dicti
 
       <div className="relative z-10 mx-auto flex w-full max-w-content flex-col items-center">
         <Reveal>
-          <Image
-            src="/images/analysis-big-logo.png"
-            alt="ANALYSIS"
-            width={750}
-            height={560}
-            priority
-            className="mx-auto h-auto w-[240px] md:w-[440px] lg:w-[700px]"
-          />
-        </Reveal>
-
-        <Reveal delay={1}>
-          <h1 className="mt-8 text-[22px] font-bold leading-tight tracking-tight text-white md:text-[28px]">
-            {dict.home.heroTitle}
+          <h1 className="font-display text-[46px] font-bold uppercase leading-none tracking-wide text-white md:text-[68px] lg:text-[84px]">
+            {dict.brand}
           </h1>
         </Reveal>
 
+        <Reveal delay={1}>
+          <p className="mt-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary md:text-base">
+            {services.join(' · ')}
+          </p>
+        </Reveal>
+
         <Reveal delay={2}>
-          <p className="mx-auto mt-4 max-w-xl text-base font-normal leading-relaxed text-white/85">
+          <p className="mx-auto mt-5 max-w-xl text-base font-normal leading-relaxed text-white/85 md:text-lg">
             {dict.home.heroSubtitle}
           </p>
         </Reveal>
