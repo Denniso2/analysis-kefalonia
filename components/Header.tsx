@@ -9,7 +9,7 @@ import {
   type Locale,
   type Dictionary,
   pagePath,
-  contactData,
+  callPhone,
   locales,
   dictionaries,
 } from '@/lib/i18n';
@@ -128,11 +128,11 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
           <LangToggle locale={locale} twinFor={twinFor} label={dict.footer.chooseLanguage} />
 
           <a
-            href={`tel:${contactData.mobile2.tel}`}
+            href={`tel:${callPhone.tel}`}
             className="ml-1 inline-flex items-center gap-2 rounded-full border-2 border-white/80 px-5 py-2 text-sm font-semibold tracking-wide transition-all hover:-translate-y-0.5 hover:border-white hover:bg-white hover:text-navy"
           >
             <PhoneIcon className="h-4 w-4" />
-            {contactData.mobile2.display}
+            {callPhone.display}
           </a>
         </nav>
 
@@ -176,11 +176,11 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
           </li>
           <li>
             <a
-              href={`tel:${contactData.mobile2.tel}`}
+              href={`tel:${callPhone.tel}`}
               className="mt-2 inline-flex items-center gap-2 rounded-full border-2 border-white px-5 py-2.5 text-sm font-semibold tracking-wide"
             >
               <PhoneIcon className="h-4 w-4" />
-              {dict.header.callLabel}: {contactData.mobile2.display}
+              {dict.header.callLabel}: {callPhone.display}
             </a>
           </li>
         </ul>

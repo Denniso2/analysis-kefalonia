@@ -46,6 +46,13 @@ export const contactData = {
     'https://www.google.com/maps/place/Analysis/@38.175695,20.489899,17z/data=!4m15!1m8!3m7!1s0x135d87bb94f8d999:0x25439d7c0f4bb8ea!2zzprOrc-BzrrPhc-BzrHPgiAzLCDOkc-BzrPOv8-Dz4TPjM67zrkgMjgxIDAw!3b1!8m2!3d38.1756597!4d20.4900874!16s%2Fg%2F11qswm26sl!3m5!1s0x135d87bb94328245:0x9d6491d5aaf53c23!8m2!3d38.1755868!4d20.4897291!16s%2Fg%2F11f32zgx45',
 } as const;
 
+/**
+ * The single number every "Call" call-to-action funnels to (header, home CTA, service pages).
+ * Keep this as the one source of truth so the dialed number never drifts between components;
+ * the contact page still lists the shop line and both mobiles via `contactData`.
+ */
+export const callPhone = contactData.mobile1;
+
 export interface QA {
   q: string;
   a: string;
@@ -87,6 +94,7 @@ export interface ServiceUi {
   ctaTitle: string;
   ctaText: string;
   ctaButton: string;
+  ctaCall: string; // label for the tap-to-call button in the service CTA block
 }
 
 export interface FaqContent {
@@ -196,7 +204,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       address: 'Kerkiras 3 , Argostoli , Kefalonia 28100',
       sitemap: 'Site Map',
       chooseLanguage: 'Choose a language',
-      copyright: 'Copyright © 2023 ANALYSIS | Created by Dionysios Polyzos',
+      copyright: 'Copyright © {year} ANALYSIS | Created by Dionysios Polyzos',
     },
     meta: {
       home: {
@@ -430,6 +438,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ctaTitle: 'Need this service?',
       ctaText: 'Tell us what you need and we’ll get back to you quickly with practical advice.',
       ctaButton: 'Contact us',
+      ctaCall: 'Call now',
     },
     faqPage: {
       navLabel: 'FAQ',
@@ -517,7 +526,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       address: 'Κερκύρας 3 , Αργοστόλι , Κεφαλονιά 28100',
       sitemap: 'Χάρτης ιστότοπου',
       chooseLanguage: 'Επιλογή γλώσσας',
-      copyright: 'Copyright © 2023 ANALYSIS | Created by Dionysios Polyzos',
+      copyright: 'Copyright © {year} ANALYSIS | Created by Dionysios Polyzos',
     },
     meta: {
       home: {
@@ -751,6 +760,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ctaTitle: 'Χρειάζεστε αυτή την υπηρεσία;',
       ctaText: 'Πείτε μας τι χρειάζεστε και θα επικοινωνήσουμε σύντομα μαζί σας με πρακτικές συμβουλές.',
       ctaButton: 'Επικοινωνία',
+      ctaCall: 'Καλέστε μας',
     },
     faqPage: {
       navLabel: 'Συχνές ερωτήσεις',

@@ -3,8 +3,8 @@ import Image from 'next/image';
 import Reveal from '@/components/Reveal';
 import Breadcrumb from '@/components/Breadcrumb';
 import FaqAccordion from '@/components/sections/FaqAccordion';
-import { CheckIcon, ArrowRightIcon, BadgeIcon } from '@/components/Icons';
-import { type Locale, type Dictionary, type ServiceDetail as SD, pagePath, serviceDetailPath } from '@/lib/i18n';
+import { CheckIcon, ArrowRightIcon, BadgeIcon, PhoneIcon } from '@/components/Icons';
+import { type Locale, type Dictionary, type ServiceDetail as SD, pagePath, serviceDetailPath, callPhone } from '@/lib/i18n';
 
 export default function ServiceDetail({
   locale,
@@ -154,10 +154,18 @@ export default function ServiceDetail({
           <Reveal>
             <h2 className="text-[26px] font-bold text-white md:text-[32px]">{ui.ctaTitle}</h2>
             <p className="mx-auto mt-4 max-w-xl leading-relaxed text-white/85">{ui.ctaText}</p>
-            <Link href={pagePath(locale, 'contact')} className="btn btn-solid-light mt-7">
-              {ui.ctaButton}
-              <ArrowRightIcon className="h-4 w-4" />
-            </Link>
+            <div className="mt-7 flex w-full max-w-btnrow flex-col items-center justify-center gap-4 md:max-w-none md:flex-row">
+              {/* Primary: tap-to-call — the fastest path to an offer. */}
+              <a href={`tel:${callPhone.tel}`} className="btn btn-solid-light">
+                <PhoneIcon className="h-4 w-4" />
+                {ui.ctaCall} · {callPhone.display}
+              </a>
+              {/* Secondary: contact page (info + message form). */}
+              <Link href={pagePath(locale, 'contact')} className="btn btn-outline-light">
+                {ui.ctaButton}
+                <ArrowRightIcon className="h-4 w-4" />
+              </Link>
+            </div>
           </Reveal>
         </div>
       </section>

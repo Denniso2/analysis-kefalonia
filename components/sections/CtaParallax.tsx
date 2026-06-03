@@ -1,6 +1,6 @@
 import Reveal from '@/components/Reveal';
 import { PhoneIcon } from '@/components/Icons';
-import { type Dictionary, contactData } from '@/lib/i18n';
+import { type Dictionary, callPhone } from '@/lib/i18n';
 
 export default function CtaParallax({ dict }: { dict: Dictionary }) {
   return (
@@ -25,7 +25,7 @@ export default function CtaParallax({ dict }: { dict: Dictionary }) {
           </p>
         </Reveal>
         <Reveal delay={2}>
-          <a href={`tel:${contactData.mobile1.tel}`} className="btn btn-solid-light mt-9">
+          <a href={`tel:${callPhone.tel}`} className="btn btn-solid-light mt-9">
             <PhoneIcon className="h-4 w-4" />
             {dict.home.ctaButton}
           </a>

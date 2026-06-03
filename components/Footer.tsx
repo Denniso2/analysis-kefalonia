@@ -11,6 +11,7 @@ import {
   locales,
   dictionaries,
   contactData,
+  callPhone,
 } from '@/lib/i18n';
 
 export default function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
@@ -44,11 +45,11 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: Diction
           <address className="mt-5 not-italic leading-relaxed">{dict.footer.address}</address>
           <div className="mt-4 space-y-2">
             <a
-              href={`tel:${contactData.mobile1.tel}`}
+              href={`tel:${callPhone.tel}`}
               className="flex items-center gap-2 transition-colors hover:text-primary"
             >
               <PhoneIcon className="h-4 w-4" />
-              {contactData.mobile1.display}
+              {callPhone.display}
             </a>
             <a
               href={`mailto:${contactData.email}`}
@@ -100,10 +101,10 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: Diction
         </div>
       </div>
 
-      {/* Copyright */}
+      {/* Copyright — year is substituted at render time so it never goes stale. */}
       <div className="border-t border-white/10">
         <div className="container-x py-5 text-center text-sm text-white/55">
-          {dict.footer.copyright}
+          {dict.footer.copyright.replace('{year}', String(new Date().getFullYear()))}
         </div>
       </div>
     </footer>
