@@ -575,7 +575,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ctaTitle: 'Περισσότερες ερωτήσεις',
       ctaText:
         'Εάν έχετε οποιαδήποτε ερώτηση για τις υπηρεσίες που προσφέρουμε παρακαλώ επικοινωνήστε μαζί μας στο παρακάτω νούμερο',
-      ctaButton: '6950300324',
+      ctaButton: 'Καλέστε μας',
     },
     services: {
       heroTitle: 'ΥΠΗΡΕΣΙΕΣ',
