@@ -14,7 +14,7 @@ const ICONS: Record<ServiceSlug, typeof PestIcon> = {
 export default function ServiceHub({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
     <section className="bg-white py-16 md:py-24">
-      <div className="container-x grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="container-x grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {dict.services.items.map((s, i) => {
           const Icon = ICONS[s.slug] ?? PestIcon;
           return (

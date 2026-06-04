@@ -1,8 +1,8 @@
 import type { Config } from 'tailwindcss';
 
 /**
- * Breakpoints mirror the original (Astra/Elementor): mobile ≤767, tablet ≤1024, desktop ≥1025.
- * Tailwind is min-width based, so: base = mobile, `md` = 768+ (tablet up), `lg` = 1025+ (desktop).
+ * Uses Tailwind's default breakpoint scale (sm 640 / md 768 / lg 1024 / xl 1280 / 2xl 1536).
+ * Mobile-first: base styles target mobile, `md` = tablet-up, `lg` = desktop-up.
  */
 const config: Config = {
   content: [
@@ -11,11 +11,6 @@ const config: Config = {
     './lib/**/*.{ts,tsx}',
   ],
   theme: {
-    screens: {
-      md: '768px',
-      lg: '1025px',
-      xl: '1200px',
-    },
     extend: {
       colors: {
         navy: '#191970', // brand midnight blue — hero/section/overlay

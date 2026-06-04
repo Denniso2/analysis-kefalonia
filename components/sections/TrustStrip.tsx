@@ -7,7 +7,7 @@ const ICONS = [BadgeIcon, LeafIcon, ClockIcon, PinIcon] as const;
 export default function TrustStrip({ dict }: { dict: Dictionary }) {
   return (
     <section className="border-b border-line bg-white py-12 md:py-16">
-      <div className="container-x grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="container-x grid gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-4">
         {dict.home.trust.map((item, i) => {
           const Icon = ICONS[i % ICONS.length];
           return (

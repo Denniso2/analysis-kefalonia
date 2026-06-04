@@ -23,7 +23,7 @@ export default function About({ locale, dict }: { locale: Locale; dict: Dictiona
 
         {/* Stats panel */}
         <Reveal delay={1}>
-          <div className="grid gap-px overflow-hidden rounded-2xl bg-line shadow-card sm:grid-cols-3 lg:grid-cols-1">
+          <div className="grid gap-px overflow-hidden rounded-2xl bg-line shadow-card md:grid-cols-3 lg:grid-cols-1">
             {dict.home.stats.map((stat) => (
               <div key={stat.label} className="bg-white p-7 text-center lg:text-left">
                 <div className="text-4xl font-extrabold tracking-tight text-teal md:text-5xl">
