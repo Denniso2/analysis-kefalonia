@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import CallBar from '@/components/CallBar';
 import SetHtmlLang from '@/components/SetHtmlLang';
 import StructuredData from '@/components/StructuredData';
 import { locales, isLocale, getDictionary, type Locale } from '@/lib/i18n';
@@ -32,6 +33,7 @@ export default async function LocaleLayout({
       <Header locale={locale} dict={dict} />
       <main id="main">{children}</main>
       <Footer locale={locale} dict={dict} />
+      <CallBar locale={locale} dict={dict} />
     </>
   );
 }

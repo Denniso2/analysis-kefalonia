@@ -114,7 +114,7 @@ export interface Dictionary {
   langName: string; // name of THIS language, shown in switcher lists
   switchToLabel: string; // label of the OTHER language (shown in the header toggle)
   nav: { home: string; services: string; faq: string; contact: string };
-  header: { callLabel: string };
+  header: { callLabel: string; dismiss: string };
   footer: {
     address: string;
     sitemap: string;
@@ -199,7 +199,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     langName: 'English',
     switchToLabel: 'Ελληνικά',
     nav: { home: 'Home', services: 'Services', faq: 'FAQ', contact: 'Contact' },
-    header: { callLabel: 'Call' },
+    header: { callLabel: 'Call', dismiss: 'Dismiss' },
     footer: {
       address: 'Kerkiras 3 , Argostoli , Kefalonia 28100',
       sitemap: 'Site Map',
@@ -521,7 +521,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     langName: 'Ελληνικά',
     switchToLabel: 'English',
     nav: { home: 'Αρχική', services: 'Υπηρεσίες', faq: 'Συχνές ερωτήσεις', contact: 'Επικοινωνία' },
-    header: { callLabel: 'Καλέστε' },
+    header: { callLabel: 'Καλέστε', dismiss: 'Απόκρυψη' },
     footer: {
       address: 'Κερκύρας 3 , Αργοστόλι , Κεφαλονιά 28100',
       sitemap: 'Χάρτης ιστότοπου',
