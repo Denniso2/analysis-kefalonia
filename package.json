@@ -5,9 +5,9 @@
   "description": "Static React (Next.js) rebuild of analysiskefalonia.com — ANALYSIS pest control & chemical analysis, Kefalonia.",
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/optimize-images.mjs && next build && node scripts/finalize.mjs",
+    "build": "node scripts/optimize-images.mjs && node scripts/og-card.mjs && next build && node scripts/finalize.mjs",
     "build:next": "next build",
-    "images": "node scripts/optimize-images.mjs",
+    "images": "node scripts/optimize-images.mjs && node scripts/og-card.mjs",
     "start": "next start",
     "serve": "npx --yes serve out",
     "lint": "next lint"

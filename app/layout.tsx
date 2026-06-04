@@ -35,6 +35,20 @@ export const metadata: Metadata = {
     ],
     apple: '/images/drop-white.png',
   },
+  // Default social card for shares that don't hit a locale page (e.g. the bare
+  // domain's redirect shell). Locale pages override these in lib/seo.ts.
+  openGraph: {
+    type: 'website',
+    siteName: 'ANALYSIS',
+    title: 'ANALYSIS – Pest control – Disinfection from pathogens',
+    description:
+      '30 years in the area of pest control and chemical analysis in Kefalonia by Chemist-Oenologist Iakovos Polyzos',
+    images: [{ url: '/images/og-en.jpg', width: 1200, height: 630, alt: 'ANALYSIS — Kefalonia' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/og-en.jpg'],
+  },
   robots: { index: true, follow: true },
 };
 
