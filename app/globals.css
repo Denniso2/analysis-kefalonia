@@ -99,6 +99,16 @@
     transform: translateY(-2px);
   }
 
+  /*
+   * Greek buttons: the 1.5px tracking that flatters Latin all-caps ("CALL NOW")
+   * reads as broken, gappy spacing on Greek all-caps ("ΚΑΛΕΣΤΕ ΜΑΣ"). Tighten it
+   * for the Greek locale only. Keyed off a server-rendered `.lang-el` class (not
+   * html[lang]), which is set on first paint — `html[lang]` is corrected post-hydration.
+   */
+  .lang-el .btn {
+    letter-spacing: 0.5px;
+  }
+
   /* Primary — filled teal accent, for light surfaces. */
   .btn-primary {
     @apply border-teal bg-teal text-white shadow-card;

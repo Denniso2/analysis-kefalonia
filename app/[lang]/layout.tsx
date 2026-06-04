@@ -31,7 +31,9 @@ export default async function LocaleLayout({
         Skip to content
       </a>
       <Header locale={locale} dict={dict} />
-      <main id="main">{children}</main>
+      <main id="main" className={locale === 'el' ? 'lang-el' : undefined}>
+        {children}
+      </main>
       <Footer locale={locale} dict={dict} />
       <CallBar locale={locale} dict={dict} />
     </>
