@@ -1,7 +1,6 @@
 import Reveal from '@/components/Reveal';
-import ContactForm from '@/components/sections/ContactForm';
 import { PhoneIcon, MailIcon, PinIcon, ClockIcon } from '@/components/Icons';
-import { type Dictionary, contactData } from '@/lib/i18n';
+import { type Dictionary, contactData, callPhone } from '@/lib/i18n';
 
 export default function ContactInfo({ dict }: { dict: Dictionary }) {
   const c = dict.contact;
@@ -9,62 +8,71 @@ export default function ContactInfo({ dict }: { dict: Dictionary }) {
   return (
     <section className="bg-surface px-5 py-20 md:py-28">
       <div className="container-x">
+        {/* Header */}
         <Reveal className="mx-auto max-w-content text-center">
           <span className="eyebrow eyebrow-center">{c.infoEyebrow}</span>
           <h2 className="section-title">{c.getInTouch}</h2>
           <p className="lead mx-auto mt-4 max-w-content">{c.subtitle}</p>
         </Reveal>
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-2 lg:gap-12">
-          {/* Info cards */}
-          <Reveal className="space-y-4">
-            <InfoCard icon={<PhoneIcon className="h-5 w-5" />} label={c.numbersLabel}>
-              <p>
-                {c.shopLabel}:{' '}
-                <a className="hover:text-teal" href={`tel:${contactData.shopPhone.tel}`}>
-                  {contactData.shopPhone.display}
-                </a>
-              </p>
-              <p>
-                {c.mobileLabel}:{' '}
-                <a className="hover:text-teal" href={`tel:${contactData.mobile1.tel}`}>
-                  {contactData.mobile1.display}
-                </a>
-                {', '}
-                <a className="hover:text-teal" href={`tel:${contactData.mobile2.tel}`}>
-                  {contactData.mobile2.display}
-                </a>
-              </p>
-            </InfoCard>
+        {/* Primary actions — one tap to call or email */}
+        <Reveal
+          delay={1}
+          className="mt-9 flex flex-col items-center justify-center gap-3 md:flex-row"
+        >
+          <a className="btn btn-primary w-full md:w-auto" href={`tel:${callPhone.tel}`}>
+            <PhoneIcon className="h-4 w-4" />
+            {c.callCta} · {callPhone.display}
+          </a>
+          <a
+            className="btn w-full border-teal bg-white text-teal transition-colors hover:bg-teal hover:text-white md:w-auto"
+            href={`mailto:${contactData.email}`}
+          >
+            <MailIcon className="h-4 w-4" />
+            {c.emailCta}
+          </a>
+        </Reveal>
 
-            <InfoCard icon={<MailIcon className="h-5 w-5" />} label={c.emailLabel}>
-              <a className="break-words hover:text-teal" href={`mailto:${contactData.email}`}>
-                {contactData.email}
+        {/* Info cards */}
+        <Reveal className="mt-14 grid gap-5 md:grid-cols-2">
+          <InfoCard icon={<PhoneIcon className="h-5 w-5" />} label={c.numbersLabel}>
+            <p>
+              {c.shopLabel}:{' '}
+              <a className="hover:text-teal" href={`tel:${contactData.shopPhone.tel}`}>
+                {contactData.shopPhone.display}
               </a>
-            </InfoCard>
+            </p>
+            <p>
+              {c.mobileLabel}:{' '}
+              <a className="hover:text-teal" href={`tel:${contactData.mobile1.tel}`}>
+                {contactData.mobile1.display}
+              </a>
+              {', '}
+              <a className="hover:text-teal" href={`tel:${contactData.mobile2.tel}`}>
+                {contactData.mobile2.display}
+              </a>
+            </p>
+          </InfoCard>
 
-            <InfoCard icon={<PinIcon className="h-5 w-5" />} label={c.addressLabel}>
-              <address className="not-italic">{c.address}</address>
-            </InfoCard>
+          <InfoCard icon={<MailIcon className="h-5 w-5" />} label={c.emailLabel}>
+            <a className="break-words hover:text-teal" href={`mailto:${contactData.email}`}>
+              {contactData.email}
+            </a>
+          </InfoCard>
 
-            <InfoCard icon={<ClockIcon className="h-5 w-5" />} label={c.hoursLabel}>
-              <p>{c.hoursWeek}</p>
-              <p>{c.hoursSunday}</p>
-            </InfoCard>
-          </Reveal>
+          <InfoCard icon={<PinIcon className="h-5 w-5" />} label={c.addressLabel}>
+            <address className="not-italic">{c.address}</address>
+          </InfoCard>
 
-          {/* Form */}
-          <Reveal delay={1}>
-            <span className="eyebrow">{c.form.eyebrow}</span>
-            <h3 className="mb-2 text-2xl font-bold text-heading">{c.form.title}</h3>
-            <p className="mb-6 text-base leading-relaxed text-ink">{c.form.intro}</p>
-            <ContactForm dict={dict} />
-          </Reveal>
-        </div>
+          <InfoCard icon={<ClockIcon className="h-5 w-5" />} label={c.hoursLabel}>
+            <p>{c.hoursWeek}</p>
+            <p>{c.hoursSunday}</p>
+          </InfoCard>
+        </Reveal>
       </div>
 
       {/* Map */}
-      <div className="container-x mt-16">
+      <div className="container-x mt-12">
         <Reveal>
           <div className="overflow-hidden rounded-2xl border border-line shadow-card">
             <iframe
@@ -102,8 +110,8 @@ function InfoCard({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex gap-4 rounded-2xl border border-line bg-white p-5 shadow-card">
-      <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal/10 text-teal">
+    <div className="group flex gap-4 rounded-2xl border border-line bg-white p-5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-cardhover">
+      <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal/10 text-teal transition-colors duration-300 group-hover:bg-teal group-hover:text-white">
         {icon}
       </span>
       <div>

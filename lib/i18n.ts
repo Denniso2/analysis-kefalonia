@@ -163,6 +163,8 @@ export interface Dictionary {
     subtitle: string;
     getInTouch: string;
     infoEyebrow: string;
+    callCta: string;
+    emailCta: string;
     numbersLabel: string;
     shopLabel: string;
     mobileLabel: string;
@@ -174,20 +176,6 @@ export interface Dictionary {
     hoursSunday: string;
     mapTitle: string;
     mapCta: string;
-    form: {
-      eyebrow: string;
-      title: string;
-      intro: string;
-      name: string;
-      email: string;
-      phone: string;
-      message: string;
-      optional: string;
-      submit: string;
-      sending: string;
-      success: string;
-      error: string;
-    };
   };
 }
 
@@ -483,9 +471,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     contact: {
       heroTitle: 'Contact',
-      subtitle: "We're here to help — reach us by phone, email or the form below.",
+      subtitle: "We're here to help — reach us by phone or email, any day we're open.",
       getInTouch: 'Get in Touch',
       infoEyebrow: 'Contact details',
+      callCta: 'Call us',
+      emailCta: 'Email us',
       numbersLabel: 'Numbers',
       shopLabel: 'Shop number',
       mobileLabel: 'Mobile number',
@@ -497,20 +487,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
       hoursSunday: 'Sunday — Closed',
       mapTitle: 'Map of ANALYSIS, Kerkiras 3, Argostoli, Kefalonia',
       mapCta: 'View on Google Maps',
-      form: {
-        eyebrow: 'Send a message',
-        title: 'Send us a message',
-        intro: "Tell us what you need and we'll get back to you as soon as we can.",
-        name: 'Name',
-        email: 'Email',
-        phone: 'Phone',
-        message: 'Message',
-        optional: 'optional',
-        submit: 'Send message',
-        sending: 'Sending…',
-        success: "Thanks! Your message has been sent — we'll be in touch shortly.",
-        error: 'Something went wrong. Please call or email us instead.',
-      },
     },
   },
 
@@ -805,9 +781,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     contact: {
       heroTitle: 'Επικοινωνία',
-      subtitle: 'Είμαστε εδώ για εσάς — επικοινωνήστε τηλεφωνικά, με email ή μέσω της φόρμας.',
+      subtitle: 'Είμαστε εδώ για εσάς — επικοινωνήστε τηλεφωνικά ή με email όποια μέρα είμαστε ανοιχτά.',
       getInTouch: 'Επικοινωνήστε μαζι μας',
       infoEyebrow: 'Στοιχεία επικοινωνίας',
+      callCta: 'Καλέστε μας',
+      emailCta: 'Στείλτε email',
       numbersLabel: 'Τηλέφωνα',
       shopLabel: 'Αριθμός καταστήματος',
       mobileLabel: 'Κινητά',
@@ -819,20 +797,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
       hoursSunday: 'Κυριακή — Κλειστά',
       mapTitle: 'Χάρτης ANALYSIS, Κερκύρας 3, Αργοστόλι, Κεφαλονιά',
       mapCta: 'Δείτε το στο Google Maps',
-      form: {
-        eyebrow: 'Στείλτε μήνυμα',
-        title: 'Στείλτε μας μήνυμα',
-        intro: 'Πείτε μας τι χρειάζεστε και θα επικοινωνήσουμε μαζί σας το συντομότερο.',
-        name: 'Όνομα',
-        email: 'Email',
-        phone: 'Τηλέφωνο',
-        message: 'Μήνυμα',
-        optional: 'προαιρετικό',
-        submit: 'Αποστολή',
-        sending: 'Αποστολή…',
-        success: 'Ευχαριστούμε! Το μήνυμά σας στάλθηκε — θα επικοινωνήσουμε σύντομα.',
-        error: 'Κάτι πήγε στραβά. Καλέστε μας ή στείλτε μας email.',
-      },
     },
   },
 };

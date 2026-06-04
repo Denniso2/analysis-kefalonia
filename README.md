@@ -41,7 +41,7 @@ components/
   Icons.tsx, Breadcrumb.tsx, JsonLd.tsx
   sections/               HomeHero, TrustStrip, ServiceCards, About, CtaParallax,
                           PageHero, ServiceHub, ServiceDetail,
-                          FaqAccordion, FaqList, ContactInfo, ContactForm
+                          FaqAccordion, FaqList, ContactInfo
 lib/
   i18n.ts                 locales, dictionaries (all EN+EL copy), contact data
   seo.ts                  per-page metadata (title/desc, canonical, hreflang, OG)
