@@ -8,93 +8,87 @@ export default function ContactInfo({ dict }: { dict: Dictionary }) {
   return (
     <section className="bg-surface px-5 py-20 md:py-28">
       <div className="container-x">
-        {/* Header */}
-        <Reveal className="mx-auto max-w-content text-center">
-          <span className="eyebrow eyebrow-center">{c.infoEyebrow}</span>
-          <h2 className="section-title">{c.getInTouch}</h2>
-          <p className="lead mx-auto mt-4 max-w-content">{c.subtitle}</p>
-        </Reveal>
+        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-12">
+          {/* Left: heading, primary actions, info cards (the hero already introduces the page) */}
+          <Reveal>
+            <h2 className="section-title">{c.getInTouch}</h2>
 
-        {/* Primary actions — one tap to call or email */}
-        <Reveal
-          delay={1}
-          className="mt-9 flex flex-col items-center justify-center gap-3 md:flex-row"
-        >
-          <a className="btn btn-primary w-full md:w-auto" href={`tel:${callPhone.tel}`}>
-            <PhoneIcon className="h-4 w-4" />
-            {c.callCta} · {callPhone.display}
-          </a>
-          <a
-            className="btn w-full border-teal bg-white text-teal transition-colors hover:bg-teal hover:text-white md:w-auto"
-            href={`mailto:${contactData.email}`}
-          >
-            <MailIcon className="h-4 w-4" />
-            {c.emailCta}
-          </a>
-        </Reveal>
+            {/* Primary actions — one tap to call or email */}
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <a className="btn btn-primary w-full sm:w-auto" href={`tel:${callPhone.tel}`}>
+                <PhoneIcon className="h-4 w-4" />
+                {c.callCta} · {callPhone.display}
+              </a>
+              <a
+                className="btn w-full border-teal bg-white text-teal transition-colors hover:bg-teal hover:text-white sm:w-auto"
+                href={`mailto:${contactData.email}`}
+              >
+                <MailIcon className="h-4 w-4" />
+                {c.emailCta}
+              </a>
+            </div>
 
-        {/* Info cards */}
-        <Reveal className="mt-14 grid gap-5 md:grid-cols-2">
-          <InfoCard icon={<PhoneIcon className="h-5 w-5" />} label={c.numbersLabel}>
-            <p>
-              {c.shopLabel}:{' '}
-              <a className="hover:text-teal" href={`tel:${contactData.shopPhone.tel}`}>
-                {contactData.shopPhone.display}
-              </a>
-            </p>
-            <p>
-              {c.mobileLabel}:{' '}
-              <a className="hover:text-teal" href={`tel:${contactData.mobile1.tel}`}>
-                {contactData.mobile1.display}
-              </a>
-              {', '}
-              <a className="hover:text-teal" href={`tel:${contactData.mobile2.tel}`}>
-                {contactData.mobile2.display}
-              </a>
-            </p>
-          </InfoCard>
+            {/* Info cards */}
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+              <InfoCard icon={<PhoneIcon className="h-5 w-5" />} label={c.numbersLabel}>
+                <p>
+                  {c.shopLabel}:{' '}
+                  <a className="hover:text-teal" href={`tel:${contactData.shopPhone.tel}`}>
+                    {contactData.shopPhone.display}
+                  </a>
+                </p>
+                <p>
+                  {c.mobileLabel}:{' '}
+                  <a className="hover:text-teal" href={`tel:${contactData.mobile1.tel}`}>
+                    {contactData.mobile1.display}
+                  </a>
+                  {', '}
+                  <a className="hover:text-teal" href={`tel:${contactData.mobile2.tel}`}>
+                    {contactData.mobile2.display}
+                  </a>
+                </p>
+              </InfoCard>
 
-          <InfoCard icon={<MailIcon className="h-5 w-5" />} label={c.emailLabel}>
-            <a className="break-words hover:text-teal" href={`mailto:${contactData.email}`}>
-              {contactData.email}
+              <InfoCard icon={<MailIcon className="h-5 w-5" />} label={c.emailLabel}>
+                <a className="break-words hover:text-teal" href={`mailto:${contactData.email}`}>
+                  {contactData.email}
+                </a>
+              </InfoCard>
+
+              <InfoCard icon={<PinIcon className="h-5 w-5" />} label={c.addressLabel}>
+                <address className="not-italic">{c.address}</address>
+              </InfoCard>
+
+              <InfoCard icon={<ClockIcon className="h-5 w-5" />} label={c.hoursLabel}>
+                <p>{c.hoursWeek}</p>
+                <p>{c.hoursSunday}</p>
+              </InfoCard>
+            </div>
+          </Reveal>
+
+          {/* Right: map fills the column */}
+          <Reveal delay={1}>
+            <div className="h-[420px] overflow-hidden rounded-2xl border border-line shadow-card sm:h-[480px] lg:h-[560px]">
+              <iframe
+                title={c.mapTitle}
+                src={contactData.mapEmbed}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-full w-full"
+                style={{ border: 0, display: 'block' }}
+              />
+            </div>
+            <a
+              className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal hover:underline"
+              href={contactData.mapLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <PinIcon className="h-4 w-4" />
+              {c.mapCta}
             </a>
-          </InfoCard>
-
-          <InfoCard icon={<PinIcon className="h-5 w-5" />} label={c.addressLabel}>
-            <address className="not-italic">{c.address}</address>
-          </InfoCard>
-
-          <InfoCard icon={<ClockIcon className="h-5 w-5" />} label={c.hoursLabel}>
-            <p>{c.hoursWeek}</p>
-            <p>{c.hoursSunday}</p>
-          </InfoCard>
-        </Reveal>
-      </div>
-
-      {/* Map */}
-      <div className="container-x mt-12">
-        <Reveal>
-          <div className="overflow-hidden rounded-2xl border border-line shadow-card">
-            <iframe
-              title={c.mapTitle}
-              src={contactData.mapEmbed}
-              width="100%"
-              height="450"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              style={{ border: 0, display: 'block' }}
-            />
-          </div>
-          <a
-            className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal hover:underline"
-            href={contactData.mapLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <PinIcon className="h-4 w-4" />
-            {c.mapCta}
-          </a>
-        </Reveal>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

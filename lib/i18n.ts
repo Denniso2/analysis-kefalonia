@@ -471,7 +471,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     contact: {
       heroTitle: 'Contact',
-      subtitle: "We're here to help — reach us by phone or email, any day we're open.",
+      subtitle: "Questions or need a quote? Call or email us any time — we're glad to help.",
       getInTouch: 'Get in Touch',
       infoEyebrow: 'Contact details',
       callCta: 'Call us',
@@ -781,7 +781,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     contact: {
       heroTitle: 'Επικοινωνία',
-      subtitle: 'Είμαστε εδώ για εσάς — επικοινωνήστε τηλεφωνικά ή με email όποια μέρα είμαστε ανοιχτά.',
+      subtitle: 'Έχετε ερωτήσεις ή χρειάζεστε προσφορά; Καλέστε ή στείλτε μας email οποιαδήποτε στιγμή — με χαρά θα σας βοηθήσουμε.',
       getInTouch: 'Επικοινωνήστε μαζι μας',
       infoEyebrow: 'Στοιχεία επικοινωνίας',
       callCta: 'Καλέστε μας',
