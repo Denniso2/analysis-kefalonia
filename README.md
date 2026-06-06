@@ -7,8 +7,6 @@ required: `npm run build` produces a fully static `out/` you can host anywhere.
 
 The original is WordPress + Astra + Elementor; this is a clean, accessible,
 performance-focused reimplementation that matches it visually and behaviorally.
-See [`AUDIT.md`](AUDIT.md) for the full reverse-engineering notes (structure, copy,
-design tokens, animations, asset map).
 
 ---
 
@@ -136,22 +134,9 @@ applying current best practices:
 - **Motion** — scroll-reveal, the home CTA parallax, hero gradient/scroll cue,
   card hover lift, animated nav underline and a shrink-on-scroll header, all disabled
   under `prefers-reduced-motion`.
-- **Contact form** — accessible name/email/phone/message form on the Contact page
-  (see _Contact form_ below).
-
-## Contact form
-
-The Contact page form works on a static host with **no configuration**: if no backend
-is set it opens the visitor's mail client (pre-filled `mailto:` to the shop address).
-To collect submissions without a mail client, set a form endpoint (e.g. a
-[Formspree](https://formspree.io) form URL) at build time:
-
-```bash
-NEXT_PUBLIC_FORM_ENDPOINT="https://formspree.io/f/xxxxxxxx" npm run build
-```
-
-When set, the form POSTs there via `fetch` and shows an inline success/error state.
-A hidden honeypot field deters basic spam bots.
+- **Contact** — action-first contact page: tap-to-call and email CTAs, info cards
+  (address, opening hours, phones) and an embedded map, plus a dismissible sticky
+  call bar on mobile.
 
 ## Intentional deviations
 
