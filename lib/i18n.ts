@@ -465,7 +465,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           category: 'Disinfection',
           items: [
             { q: 'What spaces can you disinfect?', a: 'Homes, businesses and enclosed spaces, using approved microbicidal substances and an electric nebuliser.' },
-            { q: 'How soon can the space be used again?', a: 'We advise a short waiting period after treatment. [confirm typical time]' },
+            { q: 'How soon can the space be used again?', a: 'We advise a short waiting period after treatment.' },
           ],
         },
       ],
@@ -545,7 +545,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
         {
           title: '30 χρόνια εμπειρίας',
-          text: 'Περισσότερο από τρεις δεκαετίες δίπλα σας, με εφαρμογές σε επιχειρήσεις και οικιίες.',
+          text: 'Περισσότερο από τρεις δεκαετίες δίπλα σας, με εφαρμογές σε επιχειρήσεις και οικίες.',
         },
         {
           title: 'Τοπική κάλυψη',
@@ -637,7 +637,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           overview:
             'Πραγματοποιούμε χημικές αναλύσεις σε δείγματα νερού, λαδιού κ.λπ. Διαθέτουμε ιδιαίτερη εξειδίκευση στην οινολογία: αναλύουμε δείγματα μούστου και κρασιού και χορηγούμε τις κατάλληλες οινολογικές ουσίες για την καλύτερη δυνατή ωρίμανση.',
           cover: [
-            'Πόσιμο νερό, νερό πισίνας, δείγματα από γεωτρήσεις, δείγματα απο βιολογικό καθαρισμό κ.λπ.',
+            'Πόσιμο νερό, νερό πισίνας, δείγματα από γεωτρήσεις, δείγματα από βιολογικό καθαρισμό κ.λπ.',
             'Ελαιόλαδο',
             'Αναλύσεις μούστου και κρασιού',
             'Οινολογική καθοδήγηση και ουσίες',
@@ -776,7 +776,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           category: 'Μικροβιοκτονίες',
           items: [
             { q: 'Ποιους χώρους απολυμαίνετε;', a: 'Οικίες, επιχειρήσεις και κλειστούς χώρους, με εγκεκριμένα μικροβιοκτόνα σκευάσματα και ηλεκτρικό νεφελοποιητή.' },
-            { q: 'Πόσο σύντομα μπορεί να χρησιμοποιηθεί ξανά ο χώρος;', a: 'Προτείνουμε ένα σύντομο διάστημα αναμονής μετά την εφαρμογή. [επιβεβαίωση: συνήθης χρόνος]' },
+            { q: 'Πόσο σύντομα μπορεί να χρησιμοποιηθεί ξανά ο χώρος;', a: 'Προτείνουμε ένα σύντομο διάστημα αναμονής μετά την εφαρμογή.' },
           ],
         },
       ],
