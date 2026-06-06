@@ -42,7 +42,7 @@ export default async function FaqPage({ params }: { params: Promise<{ lang: stri
         eyebrow={dict.faqPage.eyebrow}
         subtitle={dict.faqPage.subtitle}
       />
-      <FaqList dict={dict} />
+      <FaqList dict={dict} locale={locale} />
     </>
   );
 }

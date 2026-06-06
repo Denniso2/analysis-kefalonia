@@ -56,6 +56,8 @@ export const callPhone = contactData.mobile1;
 export interface QA {
   q: string;
   a: string;
+  /** Optional: render `phrase` (a substring of `a`) as a link to another service page. */
+  link?: { to: ServiceSlug; phrase: string };
 }
 
 export interface ServiceStep {
@@ -341,7 +343,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             'Analysis is performed by Chemist-Oenologist Iakovos Polyzos, with more than three decades of experience serving Kefalonia and Ithaca.',
           faq: [
             { q: 'Can you test my drinking or well water?', a: 'Yes — we analyse drinking water.' },
-            { q: 'Do you analyse wine and must?', a: 'Yes. Oenology is a specialisation — see our dedicated Wine & Oenology page for details.' },
+            { q: 'Do you analyse wine and must?', a: 'Yes. Oenology is a specialisation — see our dedicated Wine & Oenology page for details.', link: { to: 'wine-analysis', phrase: 'Wine & Oenology page' } },
             { q: 'How long do results take?', a: 'One to four days, depending on the test.' },
           ],
           relatedSlug: 'wine-analysis',
@@ -457,7 +459,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           category: 'Chemical analysis & wine',
           items: [
             { q: 'What can you analyse?', a: 'Drinking and pool water, oil, and must and wine, among other samples.' },
-            { q: 'Do you offer wine analysis?', a: 'Yes — oenology is a specialisation. See the Wine & Oenology page.' },
+            { q: 'Do you offer wine analysis?', a: 'Yes — oenology is a specialisation. See the Wine & Oenology page.', link: { to: 'wine-analysis', phrase: 'Wine & Oenology page' } },
             { q: 'How long do results take?', a: 'One to four days, depending on the test.' },
           ],
         },
@@ -652,7 +654,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             'Οι αναλύσεις πραγματοποιούνται από τον Χημικό-Οινολόγο Ιάκωβο Πολύζο, με περισσότερες από τρεις δεκαετίες εμπειρίας σε Κεφαλονιά και Ιθάκη.',
           faq: [
             { q: 'Μπορείτε να αναλύσετε το πόσιμο νερό ή το νερό της γεώτρησής μου;', a: 'Ναι — αναλύουμε πόσιμο νερό.' },
-            { q: 'Αναλύετε κρασί και μούστο;', a: 'Ναι. Η οινολογία είναι εξειδίκευσή μας — δείτε την αφιερωμένη σελίδα Οινολογίας.' },
+            { q: 'Αναλύετε κρασί και μούστο;', a: 'Ναι. Η οινολογία είναι εξειδίκευσή μας — δείτε την αφιερωμένη σελίδα Οινολογίας.', link: { to: 'wine-analysis', phrase: 'σελίδα Οινολογίας' } },
             { q: 'Πόσο χρόνο χρειάζονται τα αποτελέσματα;', a: 'Από μία έως τέσσερις ημέρες, ανάλογα με την εξέταση.' },
           ],
           relatedSlug: 'wine-analysis',
@@ -768,7 +770,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           category: 'Χημικές & οινολογικές αναλύσεις',
           items: [
             { q: 'Τι μπορείτε να αναλύσετε;', a: 'Πόσιμο νερό και νερό πισίνας, λάδι, καθώς και μούστο και κρασί, μεταξύ άλλων δειγμάτων.' },
-            { q: 'Προσφέρετε ανάλυση κρασιού;', a: 'Ναι — η οινολογία είναι εξειδίκευσή μας. Δείτε τη σελίδα Οινολογίας.' },
+            { q: 'Προσφέρετε ανάλυση κρασιού;', a: 'Ναι — η οινολογία είναι εξειδίκευσή μας. Δείτε τη σελίδα Οινολογίας.', link: { to: 'wine-analysis', phrase: 'σελίδα Οινολογίας' } },
             { q: 'Πόσο χρόνο χρειάζονται τα αποτελέσματα;', a: 'Από μία έως τέσσερις ημέρες, ανάλογα με την εξέταση.' },
           ],
         },

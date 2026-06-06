@@ -124,7 +124,7 @@ export default function ServiceDetail({
             <Reveal>
               <h2 className="section-title text-center">{ui.faqHeading}</h2>
               <div className="mt-8">
-                <FaqAccordion items={service.faq} />
+                <FaqAccordion items={service.faq} locale={locale} />
               </div>
             </Reveal>
           </div>

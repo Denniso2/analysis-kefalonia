@@ -1,8 +1,8 @@
 import Reveal from '@/components/Reveal';
 import FaqAccordion from '@/components/sections/FaqAccordion';
-import { type Dictionary } from '@/lib/i18n';
+import { type Dictionary, type Locale } from '@/lib/i18n';
 
-export default function FaqList({ dict }: { dict: Dictionary }) {
+export default function FaqList({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   return (
     <section className="bg-surface px-5 py-16 md:py-24">
       <div className="container-x">
@@ -10,7 +10,7 @@ export default function FaqList({ dict }: { dict: Dictionary }) {
           {dict.faqPage.groups.map((group) => (
             <Reveal key={group.category}>
               <h2 className="mb-5 text-xl font-bold text-heading">{group.category}</h2>
-              <FaqAccordion items={group.items} />
+              <FaqAccordion items={group.items} locale={locale} />
             </Reveal>
           ))}
         </div>
