@@ -234,7 +234,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
         {
           title: '30 years of experience',
-          text: 'Three decades serving homes and businesses across the islands.',
+          text: 'More than three decades by your side, with applications for businesses and homes.',
         },
         {
           title: 'Local coverage',
@@ -253,9 +253,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
       aboutEyebrow: 'About us',
       aboutTitle: 'A few words about us',
-      aboutLead: 'Consistency, respect and experience — for nearly three decades.',
+      aboutLead: 'Consistency, respect and experience — for more than three decades.',
       aboutText:
-        'For about three decades, we have been offering our services continuously, in Kefalonia and Ithaca. Our regular and new customers are the confirmation that our efforts are in the right direction. With consistency, respect and experience we continue …',
+        'For more than three decades, we have been offering our services continuously, in Kefalonia and Ithaca. Our regular and new customers are the confirmation that our efforts are in the right direction. With consistency, respect and experience we continue …',
       aboutCta: 'Get in touch',
       stats: [
         { value: '30+', label: 'Years of experience' },
@@ -290,8 +290,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
             'We provide pest control for the rodents and insects that affect health and comfort in both homes and businesses. Every application is planned to cause the least possible disruption to occupants while ensuring the greatest possible safety. We use modern substances approved and certified by the Ministry of Rural Development & Food and the ΕΟΦ.',
           cover: [
             'Rodents (rats and mice)',
-            'Crawling insects such as cockroaches and ants',
-            'Flying insects [confirm exact pests covered, e.g. mosquitoes, flies, wasps]',
+            'Crawling insects such as cockroaches, ants, etc.',
+            'Flying insects such as mosquitoes, flies, wasps, etc.',
+            'Parasitic insects such as fleas, bedbugs, etc.',
             'Homes, apartment buildings and holiday properties',
             'Shops, restaurants, hotels and other businesses',
           ],
@@ -304,7 +305,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           safety:
             'Our company uses only modern substances approved and certified by the Ministry of Rural Development & Food and the ΕΟΦ, applied by experienced staff under controlled conditions.',
           faq: [
-            { q: 'Is the treatment safe for children and pets?', a: 'Yes — we use approved substances and take full safety precautions. We advise on any short period to keep children or pets away from treated areas. [confirm wording with client]' },
+            { q: 'Is the treatment safe for children and pets?', a: 'Yes — we use approved substances and take full safety precautions. We advise on any short period to keep children or pets away from treated areas.' },
             { q: 'Do you serve businesses as well as homes?', a: 'Yes. We work with homes, apartment buildings and holiday properties as well as shops, restaurants, hotels and other businesses.' },
             { q: 'Do you cover Ithaca?', a: 'Yes — we serve both Kefalonia and Ithaca.' },
           ],
@@ -323,10 +324,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
           image: '/images/service-chemical-analysis.webp',
           imageAlt: 'Laboratory glassware — chemical analysis services',
           overview:
-            'We carry out chemical analysis of drinking and pool water, oil and other samples. We have a particular specialisation in oenology: we analyse must and wine and provide the right oenological substances for the best possible maturation process.',
+            'We carry out chemical analysis of water, oil and other samples. We have a particular specialisation in oenology: we analyse must and wine and provide the right oenological substances for the best possible maturation process.',
           cover: [
-            'Drinking water and pool water',
-            'Olive oil [confirm which oil parameters are tested]',
+            'Drinking water, pool water, borehole samples, biological-treatment samples, etc.',
+            'Olive oil',
             'Must and wine analysis',
             'Oenological guidance and substances',
             'Other samples on request',
@@ -337,11 +338,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
             { title: 'Results & advice', text: 'We explain the results clearly and recommend any next steps.' },
           ],
           safety:
-            'Analysis is performed by Chemist-Oenologist Iakovos Polyzos, with nearly three decades of experience serving Kefalonia and Ithaca.',
+            'Analysis is performed by Chemist-Oenologist Iakovos Polyzos, with more than three decades of experience serving Kefalonia and Ithaca.',
           faq: [
-            { q: 'Can you test my drinking or well water?', a: 'Yes — we analyse drinking and pool water. [confirm exact parameters offered]' },
+            { q: 'Can you test my drinking or well water?', a: 'Yes — we analyse drinking water.' },
             { q: 'Do you analyse wine and must?', a: 'Yes. Oenology is a specialisation — see our dedicated Wine & Oenology page for details.' },
-            { q: 'How long do results take?', a: '[confirm typical turnaround time with client]' },
+            { q: 'How long do results take?', a: 'One to four days, depending on the test.' },
           ],
           relatedSlug: 'wine-analysis',
         },
@@ -363,7 +364,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             'Homes and apartment buildings',
             'Shops, offices and other businesses',
             'Hospitality and food-service premises',
-            'Vehicles and enclosed spaces [confirm]',
+            'Vehicles and enclosed spaces',
           ],
           steps: [
             { title: 'Assessment', text: 'We evaluate the space and the level of microbial load to treat.' },
@@ -373,8 +374,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
           safety:
             'We use only specially approved microbicidal substances, applied under controlled conditions for the safety of everyone using the space.',
           faq: [
-            { q: 'What kind of spaces can you disinfect?', a: 'Homes, businesses, hospitality and food-service premises, and enclosed spaces. [confirm scope]' },
-            { q: 'How soon can a space be used again?', a: 'We advise a short waiting period after treatment. [confirm typical time]' },
+            { q: 'What kind of spaces can you disinfect?', a: 'Homes, businesses, hospitality and food-service premises, and enclosed spaces.' },
+            { q: 'How soon can a space be used again?', a: 'We advise a short waiting period after treatment.' },
             { q: 'Are the substances safe?', a: 'We use only specially approved microbicidal substances, applied in a controlled and safe way.' },
           ],
           relatedSlug: 'pest-control',
@@ -384,10 +385,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
           navLabel: 'Wine & Oenology',
           metaTitle: 'Wine & Oenology Analysis – ANALYSIS Kefalonia',
           metaDescription:
-            'Must and wine analysis and oenological guidance for Kefalonia winemakers, by Chemist-Oenologist Iakovos Polyzos.',
+            'Must and wine analysis and oenological guidance, by Chemist-Oenologist Iakovos Polyzos.',
           eyebrow: 'Wine & Oenology',
           title: 'Wine & Oenology Analysis',
-          intro: 'Must and wine analysis and oenological guidance for local winemakers.',
+          intro: 'Must and wine analysis and oenological guidance.',
           cardImage: '/images/wine-grapes.webp',
           image: '/images/wine-vineyard.webp',
           imageAlt: 'Rows of grapevines in a hillside vineyard',
@@ -395,20 +396,20 @@ export const dictionaries: Record<Locale, Dictionary> = {
             'ANALYSIS is run by Chemist-Oenologist Iakovos Polyzos. Alongside our general laboratory work, we offer dedicated support to local winemakers — analysing must and wine and providing the right oenological substances for the best possible maturation. It’s a natural fit for Kefalonia, home of the Robola variety.',
           cover: [
             'Must analysis to support harvest-timing decisions',
-            'Wine analysis through vinification [confirm exact measurements offered]',
+            'Wine analysis through vinification',
             'Supply of the appropriate oenological substances',
             'Practical oenological guidance from a qualified oenologist',
-            'For small and family wineries and growers who vinify their own grapes',
+            'For small producers who vinify their own grapes',
           ],
           steps: [
-            { title: 'Sampling', text: 'We advise how to take a representative must or wine sample, or collect it for you.' },
+            { title: 'Sampling', text: 'We advise how to take a representative must or wine sample.' },
             { title: 'Laboratory analysis', text: 'We run the appropriate oenological analyses for your sample and stage of production.' },
-            { title: 'Guidance', text: 'We explain the results and recommend the right substances and next steps for the best maturation.' },
+            { title: 'Guidance', text: 'We explain the results and provide the right oenological substances, along with the next steps for the best maturation.' },
           ],
           safety:
-            'Analysis and guidance are provided by Chemist-Oenologist Iakovos Polyzos, with nearly three decades of experience serving Kefalonia and Ithaca.',
+            'Analysis and guidance are provided by Chemist-Oenologist Iakovos Polyzos, with more than three decades of experience serving Kefalonia and Ithaca.',
           faq: [
-            { q: 'What can you measure in must and wine?', a: '[confirm the exact parameters offered — e.g. sugar, acidity, alcohol]' },
+            { q: 'What can you measure in must and wine?', a: 'Parameters such as sugar, acidity, alcohol, sulphites, etc.' },
             { q: 'Can you advise on harvest timing?', a: 'Yes — must analysis helps inform decisions on when to harvest and how to manage maturation.' },
             { q: 'Do you supply oenological substances?', a: 'Yes — we provide the appropriate substances for the best possible maturation process.' },
           ],
@@ -441,8 +442,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
           category: 'General',
           items: [
             { q: 'Where do you operate?', a: 'We serve the whole of Kefalonia and Ithaca, based in Argostoli.' },
-            { q: 'How long have you been in business?', a: 'For nearly three decades — around 30 years of continuous service.' },
-            { q: 'How do I get a quote?', a: 'Call us or use the contact form with a few details about what you need, and we’ll get back to you. [confirm whether quotes are free]' },
+            { q: 'How long have you been in business?', a: 'For more than three decades — 30+ years of continuous service.' },
+            { q: 'How do I get a quote?', a: 'Call us or email us with a few details about what you need, and we’ll get back to you shortly.' },
           ],
         },
         {
@@ -457,7 +458,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           items: [
             { q: 'What can you analyse?', a: 'Drinking and pool water, oil, and must and wine, among other samples.' },
             { q: 'Do you offer wine analysis?', a: 'Yes — oenology is a specialisation. See the Wine & Oenology page.' },
-            { q: 'How long do results take?', a: '[confirm typical turnaround time with client]' },
+            { q: 'How long do results take?', a: 'One to four days, depending on the test.' },
           ],
         },
         {
@@ -483,7 +484,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       addressLabel: 'Address',
       address: 'Kerkiras 3, Argostoli , Kefalonia 28100',
       hoursLabel: 'Business Hours',
-      hoursWeek: 'Monday — Saturday 8am – 2pm',
+      hoursWeek: 'Monday — Saturday 8am – 1pm',
       hoursSunday: 'Sunday — Closed',
       mapTitle: 'Map of ANALYSIS, Kerkiras 3, Argostoli, Kefalonia',
       mapCta: 'View on Google Maps',
@@ -544,7 +545,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
         {
           title: '30 χρόνια εμπειρίας',
-          text: 'Τρεις δεκαετίες δίπλα σε σπίτια και επιχειρήσεις στα νησιά.',
+          text: 'Περισσότερο από τρεις δεκαετίες δίπλα σας, με εφαρμογές σε επιχειρήσεις και οικιίες.',
         },
         {
           title: 'Τοπική κάλυψη',
@@ -563,9 +564,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
       aboutEyebrow: 'Σχετικά με εμάς',
       aboutTitle: 'Λίγα λόγια για εμάς',
-      aboutLead: 'Συνέπεια, σεβασμός και εμπειρία — για σχεδόν τρεις δεκαετίες.',
+      aboutLead: 'Συνέπεια, σεβασμός και εμπειρία — για περισσότερο από τρεις δεκαετίες.',
       aboutText:
-        'Για περίπου τρεις δεκαετίες προσφέρουμε συνεχώς τις υπηρεσίες μας σε Κεφαλονιά και Ιθάκη.Οι σταθεροί αλλά και οι νέοι πελάτες μας είναι η επιβεβαίωση ότι οι προσπάθειές μας βρίσκονται στην σωστή κατεύθυνση.Με συνέπεια, σεβασμό και εμπειρία συνεχίζουμε…',
+        'Για περισσότερο από τρεις δεκαετίες προσφέρουμε συνεχώς τις υπηρεσίες μας σε Κεφαλονιά και Ιθάκη.Οι σταθεροί αλλά και οι νέοι πελάτες μας είναι η επιβεβαίωση ότι οι προσπάθειές μας βρίσκονται στην σωστή κατεύθυνση.Με συνέπεια, σεβασμό και εμπειρία συνεχίζουμε…',
       aboutCta: 'Επικοινωνήστε',
       stats: [
         { value: '30+', label: 'Χρόνια εμπειρίας' },
@@ -600,8 +601,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
             'Προσφέρουμε εφαρμογές για την καταπολέμηση τρωκτικών και εντόμων υγειονομικής σημασίας, τόσο σε οικίες όσο και σε επαγγελματικούς χώρους. Κάθε εφαρμογή σχεδιάζεται ώστε να υπάρχει η μικρότερη δυνατή ενόχληση των ενοίκων, λαμβάνοντας όλα τα απαραίτητα μέτρα ασφάλειας. Χρησιμοποιούμε σύγχρονα σκευάσματα, με πιστοποίηση και άδεια κυκλοφορίας από το Υπουργείο Αγροτικής Ανάπτυξης & Τροφίμων και τον ΕΟΦ.',
           cover: [
             'Τρωκτικά (αρουραίοι και ποντίκια)',
-            'Έρποντα έντομα, όπως κατσαρίδες και μυρμήγκια',
-            'Ιπτάμενα έντομα [επιβεβαίωση: κουνούπια, μύγες, σφήκες κ.λπ.]',
+            'Έρποντα έντομα, όπως κατσαρίδες, μυρμήγκια κ.λπ.',
+            'Ιπτάμενα έντομα, όπως κουνούπια, μύγες, σφήκες κ.λπ.',
+            'Παρασιτικά έντομα, όπως ψύλλοι, κοριοί κ.λπ.',
             'Οικίες, πολυκατοικίες και εξοχικά',
             'Καταστήματα, εστιατόρια, ξενοδοχεία και άλλες επιχειρήσεις',
           ],
@@ -614,8 +616,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
           safety:
             'Η εταιρία μας χρησιμοποιεί αποκλειστικά σύγχρονα σκευάσματα, εγκεκριμένα και πιστοποιημένα από το Υπουργείο Αγροτικής Ανάπτυξης & Τροφίμων και τον ΕΟΦ, από έμπειρο προσωπικό υπό ελεγχόμενες συνθήκες.',
           faq: [
-            { q: 'Είναι ασφαλής η εφαρμογή για παιδιά και κατοικίδια;', a: 'Ναι — χρησιμοποιούμε εγκεκριμένα σκευάσματα και λαμβάνουμε όλα τα μέτρα ασφάλειας. Σας ενημερώνουμε για το σύντομο διάστημα αποφυγής των χώρων που έχουν υποστεί εφαρμογή. [επιβεβαίωση διατύπωσης με πελάτη]' },
-            { q: 'Εξυπηρετείτε και επιχειρήσεις;', a: 'Ναι. Εργαζόμαστε με οικίες, πολυκατοικίες και εξοχικά, καθώς και με καταστήματα, εστιατόρια, ξενοδοχεία και άλλες επιχειρήσεις.' },
+            { q: 'Είναι ασφαλής η εφαρμογή για παιδιά και κατοικίδια;', a: 'Ναι — χρησιμοποιούμε εγκεκριμένα σκευάσματα και λαμβάνουμε όλα τα μέτρα ασφάλειας. Σας ενημερώνουμε για το σύντομο διάστημα αποφυγής των χώρων που έχουν υποστεί εφαρμογή.' },
+            { q: 'Εξυπηρετείτε και επιχειρήσεις;', a: 'Ναι. Εργαζόμαστε σε οικίες, πολυκατοικίες και εξοχικά, καθώς και σε καταστήματα, εστιατόρια, ξενοδοχεία και άλλες επιχειρήσεις.' },
             { q: 'Καλύπτετε την Ιθάκη;', a: 'Ναι — εξυπηρετούμε τόσο την Κεφαλονιά όσο και την Ιθάκη.' },
           ],
           relatedSlug: 'disinfection',
@@ -633,10 +635,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
           image: '/images/service-chemical-analysis.webp',
           imageAlt: 'Εργαστηριακά σκεύη — υπηρεσίες χημικών αναλύσεων',
           overview:
-            'Πραγματοποιούμε χημικές αναλύσεις σε πόσιμο νερό και νερό πισίνας, λάδι και άλλα δείγματα. Διαθέτουμε ιδιαίτερη εξειδίκευση στην οινολογία: αναλύουμε δείγματα μούστου και κρασιού και χορηγούμε τις κατάλληλες οινολογικές ουσίες για την καλύτερη δυνατή ωρίμανση.',
+            'Πραγματοποιούμε χημικές αναλύσεις σε δείγματα νερού, λαδιού κ.λπ. Διαθέτουμε ιδιαίτερη εξειδίκευση στην οινολογία: αναλύουμε δείγματα μούστου και κρασιού και χορηγούμε τις κατάλληλες οινολογικές ουσίες για την καλύτερη δυνατή ωρίμανση.',
           cover: [
-            'Πόσιμο νερό και νερό πισίνας',
-            'Ελαιόλαδο [επιβεβαίωση: ποιες παράμετροι λαδιού ελέγχονται]',
+            'Πόσιμο νερό, νερό πισίνας, δείγματα από γεωτρήσεις, δείγματα απο βιολογικό καθαρισμό κ.λπ.',
+            'Ελαιόλαδο',
             'Αναλύσεις μούστου και κρασιού',
             'Οινολογική καθοδήγηση και ουσίες',
             'Άλλα δείγματα κατόπιν αιτήματος',
@@ -647,11 +649,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
             { title: 'Αποτελέσματα & συμβουλές', text: 'Σας εξηγούμε με σαφήνεια τα αποτελέσματα και προτείνουμε τα επόμενα βήματα.' },
           ],
           safety:
-            'Οι αναλύσεις πραγματοποιούνται από τον Χημικό-Οινολόγο Ιάκωβο Πολύζο, με σχεδόν τρεις δεκαετίες εμπειρίας σε Κεφαλονιά και Ιθάκη.',
+            'Οι αναλύσεις πραγματοποιούνται από τον Χημικό-Οινολόγο Ιάκωβο Πολύζο, με περισσότερες από τρεις δεκαετίες εμπειρίας σε Κεφαλονιά και Ιθάκη.',
           faq: [
-            { q: 'Μπορείτε να αναλύσετε το πόσιμο νερό ή το νερό της γεώτρησής μου;', a: 'Ναι — αναλύουμε πόσιμο νερό και νερό πισίνας. [επιβεβαίωση: ακριβείς παράμετροι]' },
+            { q: 'Μπορείτε να αναλύσετε το πόσιμο νερό ή το νερό της γεώτρησής μου;', a: 'Ναι — αναλύουμε πόσιμο νερό.' },
             { q: 'Αναλύετε κρασί και μούστο;', a: 'Ναι. Η οινολογία είναι εξειδίκευσή μας — δείτε την αφιερωμένη σελίδα Οινολογίας.' },
-            { q: 'Πόσο χρόνο χρειάζονται τα αποτελέσματα;', a: '[επιβεβαίωση: συνήθης χρόνος παράδοσης με πελάτη]' },
+            { q: 'Πόσο χρόνο χρειάζονται τα αποτελέσματα;', a: 'Από μία έως τέσσερις ημέρες, ανάλογα με την εξέταση.' },
           ],
           relatedSlug: 'wine-analysis',
         },
@@ -673,7 +675,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             'Οικίες και πολυκατοικίες',
             'Καταστήματα, γραφεία και άλλες επιχειρήσεις',
             'Χώροι φιλοξενίας και εστίασης',
-            'Οχήματα και κλειστοί χώροι [επιβεβαίωση]',
+            'Οχήματα και κλειστοί χώροι',
           ],
           steps: [
             { title: 'Αξιολόγηση', text: 'Εκτιμούμε τον χώρο και το επίπεδο του μικροβιακού φορτίου προς αντιμετώπιση.' },
@@ -683,8 +685,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
           safety:
             'Χρησιμοποιούμε αποκλειστικά ειδικά εγκεκριμένα μικροβιοκτόνα σκευάσματα, με ελεγχόμενο τρόπο, για την ασφάλεια όλων όσων χρησιμοποιούν τον χώρο.',
           faq: [
-            { q: 'Τι είδους χώρους απολυμαίνετε;', a: 'Οικίες, επιχειρήσεις, χώρους φιλοξενίας και εστίασης, καθώς και κλειστούς χώρους. [επιβεβαίωση εύρους]' },
-            { q: 'Πόσο σύντομα μπορεί να χρησιμοποιηθεί ξανά ο χώρος;', a: 'Προτείνουμε ένα σύντομο διάστημα αναμονής μετά την εφαρμογή. [επιβεβαίωση: συνήθης χρόνος]' },
+            { q: 'Τι είδους χώρους απολυμαίνετε;', a: 'Οικίες, επιχειρήσεις, χώρους φιλοξενίας και εστίασης, καθώς και κλειστούς χώρους.' },
+            { q: 'Πόσο σύντομα μπορεί να χρησιμοποιηθεί ξανά ο χώρος;', a: 'Προτείνουμε ένα σύντομο διάστημα αναμονής μετά την εφαρμογή.' },
             { q: 'Είναι ασφαλή τα σκευάσματα;', a: 'Χρησιμοποιούμε αποκλειστικά ειδικά εγκεκριμένα μικροβιοκτόνα σκευάσματα, με ελεγχόμενο και ασφαλή τρόπο.' },
           ],
           relatedSlug: 'pest-control',
@@ -694,10 +696,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
           navLabel: 'Οινολογία',
           metaTitle: 'Οινολογικές Αναλύσεις – ANALYSIS Κεφαλονιά',
           metaDescription:
-            'Αναλύσεις μούστου και κρασιού και οινολογική καθοδήγηση για τους οινοποιούς της Κεφαλονιάς, από τον Χημικό-Οινολόγο Ιάκωβο Πολύζο.',
+            'Αναλύσεις μούστου και κρασιού και οινολογική καθοδήγηση, από τον Χημικό-Οινολόγο Ιάκωβο Πολύζο.',
           eyebrow: 'Οινολογία',
           title: 'Οινολογικές Αναλύσεις',
-          intro: 'Αναλύσεις μούστου και κρασιού και οινολογική καθοδήγηση για τους τοπικούς οινοποιούς.',
+          intro: 'Αναλύσεις μούστου και κρασιού και οινολογική καθοδήγηση.',
           cardImage: '/images/wine-grapes.webp',
           image: '/images/wine-vineyard.webp',
           imageAlt: 'Σειρές αμπελιών σε λοφώδη αμπελώνα',
@@ -705,20 +707,20 @@ export const dictionaries: Record<Locale, Dictionary> = {
             'Η ANALYSIS λειτουργεί υπό τον Χημικό-Οινολόγο Ιάκωβο Πολύζο. Πέρα από τις γενικές εργαστηριακές μας εργασίες, προσφέρουμε αφιερωμένη υποστήριξη στους τοπικούς οινοποιούς — αναλύουμε μούστο και κρασί και χορηγούμε τις κατάλληλες οινολογικές ουσίες για την καλύτερη δυνατή ωρίμανση. Μια φυσική επιλογή για την Κεφαλονιά, πατρίδα της ποικιλίας Ρομπόλα.',
           cover: [
             'Ανάλυση μούστου για τη στήριξη αποφάσεων σχετικά με τον χρόνο τρύγου',
-            'Ανάλυση κρασιού κατά την οινοποίηση [επιβεβαίωση: ακριβείς μετρήσεις]',
+            'Ανάλυση κρασιού κατά την οινοποίηση',
             'Χορήγηση των κατάλληλων οινολογικών ουσιών',
             'Πρακτική οινολογική καθοδήγηση από εξειδικευμένο οινολόγο',
-            'Για μικρά και οικογενειακά οινοποιεία και παραγωγούς που οινοποιούν οι ίδιοι',
+            'Για μικρούς παραγωγούς που οινοποιούν οι ίδιοι',
           ],
           steps: [
-            { title: 'Δειγματοληψία', text: 'Σας καθοδηγούμε για τη λήψη αντιπροσωπευτικού δείγματος μούστου ή κρασιού ή το συλλέγουμε εμείς.' },
+            { title: 'Δειγματοληψία', text: 'Σας καθοδηγούμε για τη λήψη αντιπροσωπευτικού δείγματος μούστου ή κρασιού' },
             { title: 'Εργαστηριακή ανάλυση', text: 'Εκτελούμε τις κατάλληλες οινολογικές αναλύσεις ανάλογα με το δείγμα και το στάδιο παραγωγής.' },
-            { title: 'Καθοδήγηση', text: 'Σας εξηγούμε τα αποτελέσματα και προτείνουμε τις κατάλληλες ουσίες και τα επόμενα βήματα για την καλύτερη ωρίμανση.' },
+            { title: 'Καθοδήγηση', text: 'Σας εξηγούμε τα αποτελέσματα και σας χορηγούμε τις κατάλληλες οινολογικές ουσίες καθώς και τα επόμενα βήματα για την καλύτερη ωρίμανση.' },
           ],
           safety:
-            'Οι αναλύσεις και η καθοδήγηση παρέχονται από τον Χημικό-Οινολόγο Ιάκωβο Πολύζο, με σχεδόν τρεις δεκαετίες εμπειρίας σε Κεφαλονιά και Ιθάκη.',
+            'Οι αναλύσεις και η καθοδήγηση παρέχονται από τον Χημικό-Οινολόγο Ιάκωβο Πολύζο, με περισσότερες από τρεις δεκαετίες εμπειρίας σε Κεφαλονιά και Ιθάκη.',
           faq: [
-            { q: 'Τι μπορείτε να μετρήσετε σε μούστο και κρασί;', a: '[επιβεβαίωση: ακριβείς παράμετροι — π.χ. σάκχαρα, οξύτητα, αλκοόλη]' },
+            { q: 'Τι μπορείτε να μετρήσετε σε μούστο και κρασί;', a: 'Παραμέτρους σάκχαρα, οξύτητα, αλκοόλη, θειώδη κλπ.' },
             { q: 'Μπορείτε να με συμβουλέψετε για τον χρόνο τρύγου;', a: 'Ναι — η ανάλυση μούστου βοηθά στις αποφάσεις για το πότε θα γίνει ο τρύγος και πώς θα διαχειριστείτε την ωρίμανση.' },
             { q: 'Χορηγείτε οινολογικές ουσίες;', a: 'Ναι — χορηγούμε τις κατάλληλες ουσίες για την καλύτερη δυνατή διαδικασία ωρίμανσης.' },
           ],
@@ -751,8 +753,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
           category: 'Γενικά',
           items: [
             { q: 'Σε ποιες περιοχές δραστηριοποιείστε;', a: 'Εξυπηρετούμε όλη την Κεφαλονιά και την Ιθάκη, με έδρα το Αργοστόλι.' },
-            { q: 'Πόσα χρόνια λειτουργείτε;', a: 'Σχεδόν τρεις δεκαετίες — περίπου 30 χρόνια συνεχούς παρουσίας.' },
-            { q: 'Πώς μπορώ να λάβω προσφορά;', a: 'Καλέστε μας ή χρησιμοποιήστε τη φόρμα επικοινωνίας με λίγα στοιχεία για τις ανάγκες σας και θα επικοινωνήσουμε μαζί σας. [επιβεβαίωση: αν οι προσφορές είναι δωρεάν]' },
+            { q: 'Πόσα χρόνια λειτουργείτε;', a: 'Περισσότερο από τρεις δεκαετίες — 30+ χρόνια συνεχούς παρουσίας.' },
+            { q: 'Πώς μπορώ να λάβω προσφορά;', a: 'Καλέστε μας ή στείλτε μας email με λίγα στοιχεία για τις ανάγκες σας και σύντομα θα επικοινωνήσουμε μαζί σας.' },
           ],
         },
         {
@@ -767,7 +769,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           items: [
             { q: 'Τι μπορείτε να αναλύσετε;', a: 'Πόσιμο νερό και νερό πισίνας, λάδι, καθώς και μούστο και κρασί, μεταξύ άλλων δειγμάτων.' },
             { q: 'Προσφέρετε ανάλυση κρασιού;', a: 'Ναι — η οινολογία είναι εξειδίκευσή μας. Δείτε τη σελίδα Οινολογίας.' },
-            { q: 'Πόσο χρόνο χρειάζονται τα αποτελέσματα;', a: '[επιβεβαίωση: συνήθης χρόνος παράδοσης με πελάτη]' },
+            { q: 'Πόσο χρόνο χρειάζονται τα αποτελέσματα;', a: 'Από μία έως τέσσερις ημέρες, ανάλογα με την εξέταση.' },
           ],
         },
         {
@@ -793,7 +795,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       addressLabel: 'Διεύθυνση',
       address: 'Κερκύρας 3 , Αργοστόλι , Κεφαλονιά 28100',
       hoursLabel: 'Ώρες λειτουργίας',
-      hoursWeek: 'Δευτέρα — Σάββατο 8 π.μ – 2 μ.μ',
+      hoursWeek: 'Δευτέρα — Σάββατο 8 π.μ – 1 μ.μ',
       hoursSunday: 'Κυριακή — Κλειστά',
       mapTitle: 'Χάρτης ANALYSIS, Κερκύρας 3, Αργοστόλι, Κεφαλονιά',
       mapCta: 'Δείτε το στο Google Maps',
