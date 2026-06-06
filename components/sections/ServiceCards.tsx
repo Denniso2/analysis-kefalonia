@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Reveal from '@/components/Reveal';
-import { PestIcon, FlaskIcon, SprayIcon, ArrowRightIcon } from '@/components/Icons';
+import { PestIcon, FlaskIcon, SprayIcon, WineIcon, ArrowRightIcon } from '@/components/Icons';
 import { type Locale, type Dictionary, pagePath } from '@/lib/i18n';
 
 // Home card id → service detail slug.
@@ -9,12 +9,14 @@ const SLUGS: Record<string, string> = {
   pest: 'pest-control',
   chem: 'chemical-analysis',
   disinfection: 'disinfection',
+  wine: 'wine-analysis',
 };
 
 const ICONS: Record<string, typeof PestIcon> = {
   pest: PestIcon,
   chem: FlaskIcon,
   disinfection: SprayIcon,
+  wine: WineIcon,
 };
 
 export default function ServiceCards({ locale, dict }: { locale: Locale; dict: Dictionary }) {
@@ -28,11 +30,11 @@ export default function ServiceCards({ locale, dict }: { locale: Locale; dict: D
           <p className="lead mx-auto mt-4 max-w-content">{dict.home.servicesIntro}</p>
         </Reveal>
 
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {dict.home.cards.map((card, i) => {
             const Icon = ICONS[card.id] ?? PestIcon;
             return (
-              <Reveal key={card.id} delay={(i % 3) as 0 | 1 | 2} className="h-full">
+              <Reveal key={card.id} delay={(i % 4) as 0 | 1 | 2 | 3} className="h-full">
                 <Link
                   href={`${servicesBase}${SLUGS[card.id] ?? ''}/`}
                   className="group relative flex min-h-[320px] flex-col justify-end overflow-hidden rounded-2xl shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-cardhover md:min-h-[400px]"

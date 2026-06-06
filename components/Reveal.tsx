@@ -5,8 +5,8 @@ import { useEffect, useRef, useState, type ElementType, type ReactNode } from 'r
 interface RevealProps {
   children: ReactNode;
   className?: string;
-  /** 0, 1 or 2 — staggered delay steps */
-  delay?: 0 | 1 | 2;
+  /** 0, 1, 2 or 3 — staggered delay steps */
+  delay?: 0 | 1 | 2 | 3;
   as?: ElementType;
 }
 
@@ -65,7 +65,8 @@ export default function Reveal({ children, className = '', delay = 0, as: Tag = 
     };
   }, []);
 
-  const delayClass = delay === 1 ? 'reveal-delay-1' : delay === 2 ? 'reveal-delay-2' : '';
+  const delayClass =
+    delay === 1 ? 'reveal-delay-1' : delay === 2 ? 'reveal-delay-2' : delay === 3 ? 'reveal-delay-3' : '';
 
   return (
     <Tag

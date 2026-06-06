@@ -18,7 +18,7 @@ export default function ServiceHub({ locale, dict }: { locale: Locale; dict: Dic
         {dict.services.items.map((s, i) => {
           const Icon = ICONS[s.slug] ?? PestIcon;
           return (
-            <Reveal key={s.slug} delay={(i % 3) as 0 | 1 | 2} className="h-full">
+            <Reveal key={s.slug} delay={(i % 4) as 0 | 1 | 2 | 3} className="h-full">
               <Link
                 href={serviceDetailPath(locale, s.slug)}
                 className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-cardhover"
