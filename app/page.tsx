@@ -27,10 +27,19 @@ const DETECT_AND_REDIRECT = `(function () {
   }
 })();`;
 
-// The redirect shell itself should not be indexed — search engines should index
-// the locale pages (/en/, /el/) and follow their hreflang alternates instead.
+// The apex redirect shell is indexable (so analysiskefalonia.com/ isn't flagged
+// "noindex" in Search Console), but it canonicalises to /en/ and declares hreflang
+// alternates so search engines consolidate it to the locale pages instead of indexing
+// this thin "Redirecting…" shell. Googlebot follows the client redirect to a locale.
 export const metadata: Metadata = {
-  robots: { index: false, follow: true },
+  alternates: {
+    canonical: '/en/',
+    languages: {
+      en: '/en/',
+      el: '/el/',
+      'x-default': '/en/',
+    },
+  },
 };
 
 export default function RootRedirect() {
