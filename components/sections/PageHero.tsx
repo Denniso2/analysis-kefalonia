@@ -21,7 +21,7 @@ export default function PageHero({
         className="absolute left-1/2 top-0 h-[50vmin] w-[80vmin] -translate-x-1/2 rounded-full bg-navysoft/25 blur-[110px]"
       />
       <div className="container-x relative z-10">
-        <Reveal>
+        <Reveal eager>
           {eyebrow ? (
             <span className="mb-4 inline-block text-xs font-bold uppercase tracking-[0.22em] text-primary">
               {eyebrow}

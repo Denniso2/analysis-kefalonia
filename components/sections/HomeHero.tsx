@@ -23,25 +23,25 @@ export default function HomeHero({ locale, dict }: { locale: Locale; dict: Dicti
       />
 
       <div className="relative z-10 mx-auto flex w-full max-w-content flex-col items-center">
-        <Reveal>
+        <Reveal eager>
           <h1 className="font-display text-[46px] font-bold uppercase leading-none tracking-wide text-white md:text-[68px] lg:text-[84px]">
             {dict.brand}
           </h1>
         </Reveal>
 
-        <Reveal delay={1}>
+        <Reveal eager delay={1}>
           <p className="mt-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary md:text-base">
             {services.join(' · ')}
           </p>
         </Reveal>
 
-        <Reveal delay={2}>
+        <Reveal eager delay={2}>
           <p className="mx-auto mt-5 max-w-xl text-base font-normal leading-relaxed text-white/85 md:text-lg">
             {dict.home.heroSubtitle}
           </p>
         </Reveal>
 
-        <Reveal delay={2}>
+        <Reveal eager delay={2}>
           <div className="mt-9 flex w-full max-w-btnrow flex-col items-center justify-center gap-4 md:max-w-none md:flex-row">
             <Link href={pagePath(locale, 'services')} className="btn btn-outline-light">
               {dict.home.btnServices}

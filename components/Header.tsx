@@ -92,10 +92,10 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
           aria-label={`${dict.brand} — ${dict.nav.home}`}
         >
           <Image
-            src="/images/drop-white.png"
+            src="/images/drop-white-200.png"
             alt=""
-            width={62}
-            height={53}
+            width={200}
+            height={171}
             priority
             className={`w-auto transition-all duration-300 ${scrolled ? 'h-9' : 'h-12 md:h-14'}`}
           />

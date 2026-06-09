@@ -43,3 +43,18 @@ for (const job of jobs) {
     console.warn(`[optimize-images] failed ${job.in}:`, err.message);
   }
 }
+
+// The on-page logo renders ~56px tall, but drop-white.png is 700x600. Ship a small
+// PNG for the header/footer; the full-size file stays for the app/apple icons.
+try {
+  const logoSrc = path.join(imgDir, 'drop-white.png');
+  if (existsSync(logoSrc)) {
+    const info = await sharp(logoSrc)
+      .resize({ width: 200, withoutEnlargement: true })
+      .png({ compressionLevel: 9, palette: true })
+      .toFile(path.join(imgDir, 'drop-white-200.png'));
+    console.log(`[optimize-images] drop-white-200.png  ${Math.round(info.size / 1024)}KB  ${info.width}x${info.height}`);
+  }
+} catch (err) {
+  console.warn('[optimize-images] failed logo resize:', err.message);
+}
