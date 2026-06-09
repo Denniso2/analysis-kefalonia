@@ -37,7 +37,7 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: Diction
             className="flex items-center gap-3"
             aria-label={dict.brand}
           >
-            <Image src="/images/drop-white.png" alt="" width={62} height={53} className="h-10 w-auto" />
+            <Image src="/images/drop-white-200.png" alt="" width={200} height={171} className="h-10 w-auto" />
             <span className="font-display text-[26px] font-semibold tracking-wide text-white">
               {dict.brand}
             </span>

@@ -8,6 +8,7 @@ interface RevealProps {
   /** 0, 1, 2 or 3 — staggered delay steps */
   delay?: 0 | 1 | 2 | 3;
   as?: ElementType;
+  eager?: boolean;
 }
 
 /**
@@ -15,11 +16,18 @@ interface RevealProps {
  * Fail-safe: content is always revealed within 1.4s even if IntersectionObserver
  * misbehaves, and is forced visible under prefers-reduced-motion (and no-JS via CSS).
  */
-export default function Reveal({ children, className = '', delay = 0, as: Tag = 'div' }: RevealProps) {
+export default function Reveal({
+  children,
+  className = '',
+  delay = 0,
+  as: Tag = 'div',
+  eager = false,
+}: RevealProps) {
   const ref = useRef<HTMLElement | null>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    if (eager) return;
     const el = ref.current;
     if (!el) return;
 
@@ -63,7 +71,18 @@ export default function Reveal({ children, className = '', delay = 0, as: Tag = 
       obs.disconnect();
       window.clearTimeout(t);
     };
-  }, []);
+  }, [eager]);
+
+  if (eager) {
+    return (
+      <Tag
+        className={`animate-fade-up ${className}`.trim()}
+        style={delay ? { animationDelay: `${delay * 120}ms` } : undefined}
+      >
+        {children}
+      </Tag>
+    );
+  }
 
   const delayClass =
     delay === 1 ? 'reveal-delay-1' : delay === 2 ? 'reveal-delay-2' : delay === 3 ? 'reveal-delay-3' : '';
