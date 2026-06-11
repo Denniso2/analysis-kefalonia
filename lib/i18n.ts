@@ -1,6 +1,10 @@
-export const locales = ['en', 'el'] as const;
+// Greek first: the business serves a mainly local (Greek-speaking) audience, so
+// Greek is the primary locale — it leads the language toggle and is the default
+// destination wherever a single locale has to be chosen. English stays as the
+// fallback for the island's foreign visitors.
+export const locales = ['el', 'en'] as const;
 export type Locale = (typeof locales)[number];
-export const defaultLocale: Locale = 'en';
+export const defaultLocale: Locale = 'el';
 
 export function isLocale(value: string): value is Locale {
   return (locales as readonly string[]).includes(value);
@@ -191,16 +195,16 @@ export const dictionaries: Record<Locale, Dictionary> = {
     nav: { home: 'Home', services: 'Services', faq: 'FAQ', contact: 'Contact' },
     header: { callLabel: 'Call', dismiss: 'Dismiss' },
     footer: {
-      address: 'Kerkiras 3 , Argostoli , Kefalonia 28100',
+      address: 'Kerkiras 3, Argostoli, Kefalonia 28100',
       sitemap: 'Site Map',
       chooseLanguage: 'Choose a language',
       copyright: 'Copyright © {year} ANALYSIS | Created by Dionysios Polyzos',
     },
     meta: {
       home: {
-        title: 'ANALYSIS – Pest control – Disinfection from pathogens',
+        title: 'ANALYSIS Kefalonia – Pest Control, Disinfection & Chemical Analysis',
         description:
-          '30 years in the area of pest control and chemical analysis in Kefalonia by Chemist-Oenologist Iakovos Polyzos',
+          '30 years of pest control and chemical analysis across Kefalonia and Ithaca, based in Argostoli — by Chemist-Oenologist Iakovos Polyzos.',
       },
       services: {
         title: 'Services – ANALYSIS Kefalonia',
@@ -485,7 +489,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       mobileLabel: 'Mobile number',
       emailLabel: 'Email',
       addressLabel: 'Address',
-      address: 'Kerkiras 3, Argostoli , Kefalonia 28100',
+      address: 'Kerkiras 3, Argostoli, Kefalonia 28100',
       hoursLabel: 'Business Hours',
       hoursWeek: 'Monday — Saturday 8am – 1pm',
       hoursSunday: 'Sunday — Closed',
@@ -503,16 +507,16 @@ export const dictionaries: Record<Locale, Dictionary> = {
     nav: { home: 'Αρχική', services: 'Υπηρεσίες', faq: 'Συχνές ερωτήσεις', contact: 'Επικοινωνία' },
     header: { callLabel: 'Καλέστε', dismiss: 'Απόκρυψη' },
     footer: {
-      address: 'Κερκύρας 3 , Αργοστόλι , Κεφαλονιά 28100',
+      address: 'Κερκύρας 3, Αργοστόλι, Κεφαλονιά 28100',
       sitemap: 'Χάρτης ιστότοπου',
       chooseLanguage: 'Επιλογή γλώσσας',
       copyright: 'Copyright © {year} ANALYSIS | Created by Dionysios Polyzos',
     },
     meta: {
       home: {
-        title: 'ANALYSIS – Απολυμάνσεις – Απεντομώσεις – Χημικές αναλύσεις',
+        title: 'ANALYSIS Κεφαλονιά – Απολυμάνσεις, Απεντομώσεις & Χημικές Αναλύσεις',
         description:
-          '30 χρόνια στον χώρο των απολυμάνσεων και των χημικών αναλύσεων στην Κεφαλονιά από τον Χημικό-Οινολόγο Ιάκωβο Πολύζο',
+          '30 χρόνια στον χώρο των απολυμάνσεων και των χημικών αναλύσεων σε Κεφαλονιά και Ιθάκη, με έδρα το Αργοστόλι — από τον Χημικό-Οινολόγο Ιάκωβο Πολύζο.',
       },
       services: {
         title: 'Υπηρεσίες – ANALYSIS Κεφαλονιά',
@@ -570,7 +574,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       aboutTitle: 'Λίγα λόγια για εμάς',
       aboutLead: 'Συνέπεια, σεβασμός και εμπειρία — για περισσότερο από τρεις δεκαετίες.',
       aboutText:
-        'Για περισσότερο από τρεις δεκαετίες προσφέρουμε συνεχώς τις υπηρεσίες μας σε Κεφαλονιά και Ιθάκη.Οι σταθεροί αλλά και οι νέοι πελάτες μας είναι η επιβεβαίωση ότι οι προσπάθειές μας βρίσκονται στην σωστή κατεύθυνση.Με συνέπεια, σεβασμό και εμπειρία συνεχίζουμε…',
+        'Για περισσότερο από τρεις δεκαετίες προσφέρουμε συνεχώς τις υπηρεσίες μας σε Κεφαλονιά και Ιθάκη. Οι σταθεροί αλλά και οι νέοι πελάτες μας είναι η επιβεβαίωση ότι οι προσπάθειές μας βρίσκονται στην σωστή κατεύθυνση. Με συνέπεια, σεβασμό και εμπειρία συνεχίζουμε…',
       aboutCta: 'Επικοινωνήστε',
       stats: [
         { value: '30+', label: 'Χρόνια εμπειρίας' },
@@ -579,7 +583,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
       ctaTitle: 'Περισσότερες ερωτήσεις',
       ctaText:
-        'Εάν έχετε οποιαδήποτε ερώτηση για τις υπηρεσίες που προσφέρουμε παρακαλώ επικοινωνήστε μαζί μας στο παρακάτω νούμερο',
+        'Εάν έχετε οποιαδήποτε ερώτηση για τις υπηρεσίες που προσφέρουμε, παρακαλούμε επικοινωνήστε μαζί μας στο παρακάτω τηλέφωνο.',
       ctaButton: 'Καλέστε μας',
     },
     services: {
@@ -717,14 +721,14 @@ export const dictionaries: Record<Locale, Dictionary> = {
             'Για μικρούς παραγωγούς που οινοποιούν οι ίδιοι',
           ],
           steps: [
-            { title: 'Δειγματοληψία', text: 'Σας καθοδηγούμε για τη λήψη αντιπροσωπευτικού δείγματος μούστου ή κρασιού' },
+            { title: 'Δειγματοληψία', text: 'Σας καθοδηγούμε για τη λήψη αντιπροσωπευτικού δείγματος μούστου ή κρασιού.' },
             { title: 'Εργαστηριακή ανάλυση', text: 'Εκτελούμε τις κατάλληλες οινολογικές αναλύσεις ανάλογα με το δείγμα και το στάδιο παραγωγής.' },
             { title: 'Καθοδήγηση', text: 'Σας εξηγούμε τα αποτελέσματα και σας χορηγούμε τις κατάλληλες οινολογικές ουσίες καθώς και τα επόμενα βήματα για την καλύτερη ωρίμανση.' },
           ],
           safety:
             'Οι αναλύσεις και η καθοδήγηση παρέχονται από τον Χημικό-Οινολόγο Ιάκωβο Πολύζο, με περισσότερες από τρεις δεκαετίες εμπειρίας σε Κεφαλονιά και Ιθάκη.',
           faq: [
-            { q: 'Τι μπορείτε να μετρήσετε σε μούστο και κρασί;', a: 'Παραμέτρους σάκχαρα, οξύτητα, αλκοόλη, θειώδη κλπ.' },
+            { q: 'Τι μπορείτε να μετρήσετε σε μούστο και κρασί;', a: 'Παραμέτρους όπως σάκχαρα, οξύτητα, αλκοόλη, θειώδη κ.λπ.' },
             { q: 'Μπορείτε να με συμβουλέψετε για τον χρόνο τρύγου;', a: 'Ναι — η ανάλυση μούστου βοηθά στις αποφάσεις για το πότε θα γίνει ο τρύγος και πώς θα διαχειριστείτε την ωρίμανση.' },
             { q: 'Χορηγείτε οινολογικές ουσίες;', a: 'Ναι — χορηγούμε τις κατάλληλες ουσίες για την καλύτερη δυνατή διαδικασία ωρίμανσης.' },
           ],
@@ -788,7 +792,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     contact: {
       heroTitle: 'Επικοινωνία',
       subtitle: 'Έχετε ερωτήσεις ή χρειάζεστε προσφορά; Καλέστε ή στείλτε μας email οποιαδήποτε στιγμή — με χαρά θα σας βοηθήσουμε.',
-      getInTouch: 'Επικοινωνήστε μαζι μας',
+      getInTouch: 'Επικοινωνήστε μαζί μας',
       infoEyebrow: 'Στοιχεία επικοινωνίας',
       callCta: 'Καλέστε μας',
       emailCta: 'Στείλτε email',
@@ -797,9 +801,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       mobileLabel: 'Κινητά',
       emailLabel: 'Email',
       addressLabel: 'Διεύθυνση',
-      address: 'Κερκύρας 3 , Αργοστόλι , Κεφαλονιά 28100',
+      address: 'Κερκύρας 3, Αργοστόλι, Κεφαλονιά 28100',
       hoursLabel: 'Ώρες λειτουργίας',
-      hoursWeek: 'Δευτέρα — Σάββατο 8 π.μ – 1 μ.μ',
+      hoursWeek: 'Δευτέρα — Σάββατο 8 π.μ. – 1 μ.μ.',
       hoursSunday: 'Κυριακή — Κλειστά',
       mapTitle: 'Χάρτης ANALYSIS, Κερκύρας 3, Αργοστόλι, Κεφαλονιά',
       mapCta: 'Δείτε το στο Google Maps',

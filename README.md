@@ -2,8 +2,9 @@
 
 A statically-exported **Next.js (App Router, TypeScript)** rebuild of
 [analysiskefalonia.com](https://analysiskefalonia.com) — ANALYSIS, pest control &
-chemical analysis in Kefalonia. Bilingual (English `/en`, Greek `/el`), no server
-required: `npm run build` produces a fully static `out/` you can host anywhere.
+chemical analysis in Kefalonia. Bilingual (Greek `/el` — the primary locale — and
+English `/en`), no server required: `npm run build` produces a fully static `out/`
+you can host anywhere.
 
 The original is WordPress + Astra + Elementor; this is a clean, accessible,
 performance-focused reimplementation that matches it visually and behaviorally.
@@ -24,7 +25,7 @@ performance-focused reimplementation that matches it visually and behaviorally.
 ```
 app/
   layout.tsx              root layout (fonts, base metadata, favicon)
-  page.tsx                "/" → redirects to /en/
+  page.tsx                "/" → language-detect redirect (/el/ if Greek, else /en/)
   robots.ts, sitemap.ts   generated robots.txt & sitemap.xml
   [lang]/
     layout.tsx                    per-locale chrome (header, footer, <html lang>, JSON-LD)
@@ -46,7 +47,7 @@ lib/
 public/images/            logos + photos (WebP generated at build)
 scripts/
   optimize-images.mjs     JPG → resized WebP (runs before build)
-  finalize.mjs            sets <html lang="el"> on the static Greek pages
+  finalize.mjs            sets <html lang="en"> on the static English pages
 ```
 
 ## Requirements
@@ -57,7 +58,7 @@ scripts/
 
 ```bash
 npm install
-npm run dev            # http://localhost:3000  → redirects to /en
+npm run dev            # http://localhost:3000  → language-detect redirect
 ```
 
 ## Build (static export)
@@ -70,8 +71,8 @@ Output is written to **`out/`**. The build pipeline:
 
 1. `scripts/optimize-images.mjs` — generates resized WebP versions of the photos.
 2. `next build` — compiles and statically exports all routes.
-3. `scripts/finalize.mjs` — rewrites `<html lang>` to `el` on the Greek pages so
-   crawlers see the correct language (the root layout defaults to `en`; the client
+3. `scripts/finalize.mjs` — rewrites `<html lang>` to `en` on the English pages so
+   crawlers see the correct language (the root layout defaults to `el`; the client
    also corrects it at runtime).
 
 ### Preview the static output locally
@@ -87,7 +88,7 @@ python3 -m http.server -d out 8080
 
 | Path | Page |
 |------|------|
-| `/` | redirects to `/en/` |
+| `/` | language-detect redirect: `/el/` if Greek is in the browser's languages, else `/en/` |
 | `/en/`, `/el/` | Home |
 | `/en/services/`, `/el/services/` | Services hub |
 | `/en/services/{pest-control,chemical-analysis,disinfection,wine-analysis}/` | Service detail (per locale) |
@@ -149,7 +150,10 @@ applying current best practices:
 - **Header is transparent over the (navy) hero and shrinks on scroll** to a solid,
   shadowed navy bar — replacing the original's static transparent header.
 - **`/` redirect** is a client redirect + `<meta refresh>` (static export can't do
-  server redirects). The default locale is English.
+  server redirects). Greek is the primary locale: it wins if it appears anywhere in
+  the browser's language list (locals often run English-UI phones), the apex
+  canonicalises to `/el/`, and the no-JS fallback goes to `/el/`. English remains
+  the fallback for foreign visitors (`x-default`).
 - **Analytics removed.** Google Tag Manager / gtag from the original is not included.
 - **Map** uses the same Google Maps embed (Argostoli, zoom 17). It loads from Google
   at runtime; everything else is fully self-contained.

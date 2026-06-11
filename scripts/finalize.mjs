@@ -1,6 +1,7 @@
-// Post-export finalize: correct the static <html lang> for Greek pages so crawlers
-// see the right language (the root layout defaults to lang="en"; the client also
-// corrects it at runtime, this fixes the static HTML for SEO).
+// Post-export finalize: correct the static <html lang> for English pages so crawlers
+// see the right language (the root layout defaults to lang="el" — Greek is the
+// primary locale; the client also corrects it at runtime, this fixes the static
+// HTML for SEO).
 import path from 'node:path';
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
@@ -23,9 +24,9 @@ async function walk(dir) {
       await walk(full);
     } else if (entry.name.endsWith('.html')) {
       const rel = path.relative(outDir, full).split(path.sep);
-      if (rel[0] === 'el') {
+      if (rel[0] === 'en') {
         const html = await readFile(full, 'utf8');
-        const fixed = html.replace('<html lang="en"', '<html lang="el"');
+        const fixed = html.replace('<html lang="el"', '<html lang="en"');
         if (fixed !== html) {
           await writeFile(full, fixed, 'utf8');
           patched += 1;
@@ -36,4 +37,4 @@ async function walk(dir) {
 }
 
 await walk(outDir);
-console.log(`[finalize] set lang="el" on ${patched} Greek page(s).`);
+console.log(`[finalize] set lang="en" on ${patched} English page(s).`);

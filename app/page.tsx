@@ -3,8 +3,12 @@ import type { Metadata } from 'next';
 /**
  * Root entry (/). Static export can't redirect on the server and Next middleware
  * doesn't run for `output: 'export'`, so we detect the visitor's preferred
- * language in the browser: Greek-speaking browsers go to /el/, everyone else to
- * /en/ (English is the international fallback for the island's foreign visitors).
+ * language in the browser.
+ *
+ * Greek wins if it appears ANYWHERE in the preference list, not just first:
+ * many Greek locals run their phone/browser in English (prefs like [en-US, el]),
+ * and they're the primary audience — a true foreign visitor has no `el` entry
+ * at all. Everyone without Greek goes to /en/, the international fallback.
  *
  * The detection runs as an inline script at HTML-parse time — before React
  * hydrates — so the redirect is instant with no English-then-Greek flash and no
@@ -15,11 +19,9 @@ const DETECT_AND_REDIRECT = `(function () {
     var prefs = (navigator.languages && navigator.languages.length)
       ? navigator.languages
       : [navigator.language || ''];
-    var loc = 'en';
+    var loc = 'en'; // international fallback (no Greek anywhere in the list)
     for (var i = 0; i < prefs.length; i++) {
-      var tag = String(prefs[i] || '').toLowerCase();
-      if (tag.indexOf('el') === 0) { loc = 'el'; break; } // Greek (locals)
-      if (tag.indexOf('en') === 0) { loc = 'en'; break; } // English (foreigners)
+      if (String(prefs[i] || '').toLowerCase().indexOf('el') === 0) { loc = 'el'; break; }
     }
     window.location.replace('/' + loc + '/');
   } catch (e) {
@@ -28,12 +30,14 @@ const DETECT_AND_REDIRECT = `(function () {
 })();`;
 
 // The apex redirect shell is indexable (so analysiskefalonia.com/ isn't flagged
-// "noindex" in Search Console), but it canonicalises to /en/ and declares hreflang
-// alternates so search engines consolidate it to the locale pages instead of indexing
-// this thin "Redirecting…" shell. Googlebot follows the client redirect to a locale.
+// "noindex" in Search Console), but it canonicalises to /el/ — Greek locals are the
+// primary market, so links to the bare domain should consolidate to the Greek home —
+// and declares hreflang alternates so search engines serve each searcher their
+// language. x-default stays /en/: for searchers matching neither locale (foreign
+// tourists), English is the right fallback. Googlebot follows the client redirect.
 export const metadata: Metadata = {
   alternates: {
-    canonical: '/en/',
+    canonical: '/el/',
     languages: {
       en: '/en/',
       el: '/el/',
