@@ -21,14 +21,17 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
 });
 
+// Defaults are Greek — the primary market — and apply to whatever doesn't hit a
+// locale page (the bare domain's redirect shell, the 404 page). Locale pages
+// override all of this in lib/seo.ts.
 export const metadata: Metadata = {
   metadataBase: new URL('https://analysiskefalonia.com'),
   title: {
-    default: 'ANALYSIS – Pest control – Disinfection from pathogens',
+    default: 'ANALYSIS Κεφαλονιά – Απολυμάνσεις, Απεντομώσεις & Χημικές Αναλύσεις',
     template: '%s',
   },
   description:
-    '30 years in the area of pest control and chemical analysis in Kefalonia by Chemist-Oenologist Iakovos Polyzos',
+    '30 χρόνια στον χώρο των απολυμάνσεων και των χημικών αναλύσεων σε Κεφαλονιά και Ιθάκη, με έδρα το Αργοστόλι — από τον Χημικό-Οινολόγο Ιάκωβο Πολύζο.',
   icons: {
     icon: [
       { url: '/images/drop-white-150x150.png', sizes: '32x32', type: 'image/png' },
@@ -36,19 +39,17 @@ export const metadata: Metadata = {
     ],
     apple: '/images/drop-white.png',
   },
-  // Default social card for shares that don't hit a locale page (e.g. the bare
-  // domain's redirect shell). Locale pages override these in lib/seo.ts.
   openGraph: {
     type: 'website',
     siteName: 'ANALYSIS',
-    title: 'ANALYSIS – Pest control – Disinfection from pathogens',
+    title: 'ANALYSIS Κεφαλονιά – Απολυμάνσεις, Απεντομώσεις & Χημικές Αναλύσεις',
     description:
-      '30 years in the area of pest control and chemical analysis in Kefalonia by Chemist-Oenologist Iakovos Polyzos',
-    images: [{ url: '/images/og-en.jpg', width: 1200, height: 630, alt: 'ANALYSIS — Kefalonia' }],
+      '30 χρόνια στον χώρο των απολυμάνσεων και των χημικών αναλύσεων σε Κεφαλονιά και Ιθάκη, με έδρα το Αργοστόλι — από τον Χημικό-Οινολόγο Ιάκωβο Πολύζο.',
+    images: [{ url: '/images/og-el.jpg', width: 1200, height: 630, alt: 'ANALYSIS — Κεφαλονιά' }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/images/og-en.jpg'],
+    images: ['/images/og-el.jpg'],
   },
   robots: { index: true, follow: true },
 };
@@ -59,7 +60,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
+    // Greek is the static default; scripts/finalize.mjs rewrites lang="en" onto the
+    // exported English pages, and SetHtmlLang corrects it at runtime per locale.
+    <html lang="el" className={`${inter.variable} ${montserrat.variable}`}>
       <head>
         {/* Without JS, never keep scroll-reveal content hidden. */}
         <noscript>
