@@ -28,7 +28,7 @@ export function pageMetadata(locale: Locale, page: PageKey): Metadata {
       languages: {
         en: pagePath('en', page),
         el: pagePath('el', page),
-        'x-default': pagePath('en', page),
+        'x-default': pagePath('el', page),
       },
     },
     openGraph: {
@@ -64,7 +64,7 @@ export function serviceMetadata(locale: Locale, slug: ServiceSlug): Metadata {
       languages: {
         en: serviceDetailPath('en', slug),
         el: serviceDetailPath('el', slug),
-        'x-default': serviceDetailPath('en', slug),
+        'x-default': serviceDetailPath('el', slug),
       },
     },
     openGraph: {

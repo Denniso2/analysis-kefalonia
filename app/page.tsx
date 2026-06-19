@@ -33,15 +33,17 @@ const DETECT_AND_REDIRECT = `(function () {
 // "noindex" in Search Console), but it canonicalises to /el/ — Greek locals are the
 // primary market, so links to the bare domain should consolidate to the Greek home —
 // and declares hreflang alternates so search engines serve each searcher their
-// language. x-default stays /en/: for searchers matching neither locale (foreign
-// tourists), English is the right fallback. Googlebot follows the client redirect.
+// language. x-default is /el/ too: this is a Greek-first local business, so the
+// fallback for searchers matching neither locale should be Greek, not English. An
+// `en`-matching searcher still gets /en/ via its own hreflang. Googlebot follows the
+// client redirect.
 export const metadata: Metadata = {
   alternates: {
     canonical: '/el/',
     languages: {
       en: '/en/',
       el: '/el/',
-      'x-default': '/en/',
+      'x-default': '/el/',
     },
   },
 };
