@@ -32,12 +32,15 @@ export const metadata: Metadata = {
   },
   description:
     '30 χρόνια στον χώρο των απολυμάνσεων και των χημικών αναλύσεων σε Κεφαλονιά και Ιθάκη, με έδρα το Αργοστόλι — από τον Χημικό-Οινολόγο Ιάκωβο Πολύζο.',
+  // The brand mark is a WHITE drop, which vanishes on the white background Google
+  // and light browser tabs render favicons against. scripts/favicons.mjs composites
+  // it onto a navy tile so it stays legible; favicon.ico carries the 16/32/48 frames.
   icons: {
     icon: [
-      { url: '/images/drop-white-150x150.png', sizes: '32x32', type: 'image/png' },
-      { url: '/images/drop-white.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/images/icon-192.png', type: 'image/png', sizes: '192x192' },
     ],
-    apple: '/images/drop-white.png',
+    apple: { url: '/images/apple-icon.png', sizes: '180x180' },
   },
   openGraph: {
     type: 'website',
