@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://analysiskefalonia.com
+Sitemap: https://analysiskefalonia.com/sitemap.xml
